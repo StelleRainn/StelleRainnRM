@@ -36,7 +36,8 @@ export default defineConfig([
     name: 'app/custom-rules',
     rules: {
       'vue/multi-word-component-names': [
-        'warn',
+        // 'warn',
+        'ignore',
         {
           ignores: ['index'] // vue组件名称多单词组成（忽略index.vue）
         }

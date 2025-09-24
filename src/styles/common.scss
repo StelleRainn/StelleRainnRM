@@ -1,0 +1,20 @@
+// 全局通用样式
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 添加平滑滚动效果 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  // background: url('@/assets/images/miku-1.jpeg') no-repeat top/cover;
+  background: linear-gradient(to right bottom, #b97e9f, #2767a9);
+  min-height: 100vh;
+
+  letter-spacing: 0.1rem;
+  // font-family: 'LXGWWenKai-Light', sans-serif;
+  font-family: 'NotoSerifSC', serif;
+}

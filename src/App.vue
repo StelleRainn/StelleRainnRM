@@ -1,9 +1,8 @@
-<script setup>
-import GeneralHeader from './components/GeneralHeader.vue'
-</script>
+<script setup></script>
 
 <template>
-  <GeneralHeader>这是父组件内容</GeneralHeader>
+  <GeneralHeader></GeneralHeader>
+  <RouterView></RouterView>
 </template>
 
 <style scoped lang="scss"></style>

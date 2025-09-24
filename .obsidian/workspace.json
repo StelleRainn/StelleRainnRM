@@ -170,10 +170,24 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "c6418e0709ece5ce",
+  "active": "60dd470db4dca6ca",
   "lastOpenFiles": [
-    "src/utils",
-    "dev_track/开发日志.md",
-    "dev_track"
+    "src/views/playground/Index.vue",
+    "src/views/rosa/Rosa.vue",
+    "src/views/resume/Resume.vue",
+    "src/views/reformCreate/ReformCreate.vue",
+    "src/views/home/Home.vue",
+    "src/views/contact/Contact.vue",
+    "src/views/collection/Collection.vue",
+    "src/views/chasingRain/ChasingRain.vue",
+    "src/views/chasingRain/Index.vue",
+    "src/styles/font.scss",
+    "src/styles/common.scss",
+    "src/assets/images/columbina-1.jpeg",
+    "src/assets/images/furina-1.jpeg",
+    "src/assets/images/miku-1.jpeg",
+    "src/assets/miku-1.jpeg",
+    "src/assets/E43A7A61-9575-4063-98B7-B7C0FDC0D422_1_105_c.jpeg",
+    "dev_track/开发日志.md"
   ]
 }

@@ -8,18 +8,20 @@ const onGettingDetail = (artworkId) => {
   console.log(props.artworkId, artworkId)
 }
 
-const onExperienceOnline = (artworkId) => {
+const onExperienceOnline = (artworkId, e) => {
   console.log(artworkId)
+  e.stopPropagation()
 }
 </script>
 
 <template>
+  <!-- Hero Banner 内部样式统一设置 100% 高度， 在外部使用组件时，制定具体高度 -->
   <!-- 动态设置背景 -->
   <div class="hero-banner-container">
     <!-- 背景层 -->
     <div class="background-layer" :style="{ backgroundImage: props.bgUrl ? `url(${props.bgUrl})` : 'none' }"></div>
     <!-- 内容层 -->
-    <div class="content-layer">
+    <div class="content-layer" @click="onGettingDetail(artworkId)">
       <h1>
         <slot name="main-title">默认大标题</slot>
       </h1>
@@ -27,8 +29,9 @@ const onExperienceOnline = (artworkId) => {
         <slot name="sub-title">默认小标题</slot>
       </h3>
       <div class="button-group">
-        <el-button type="primary" round size="large" @click="onGettingDetail(artworkId)">进一步了解</el-button>
-        <el-button round plain size="large" @click="onExperienceOnline(artworkId)">在线体验</el-button>
+        <el-button type="primary" round size="large">进一步了解</el-button>
+        <!-- 需要显式传递 $event 或者使用 @click.stop -->
+        <el-button round plain size="large" @click="onExperienceOnline(artworkId, $event)">在线体验</el-button>
       </div>
     </div>
   </div>
@@ -43,6 +46,8 @@ const onExperienceOnline = (artworkId) => {
   position: relative;
   height: 100%;
   overflow: hidden;
+
+  cursor: pointer;
 
   .background-layer {
     position: absolute;

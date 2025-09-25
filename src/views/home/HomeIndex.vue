@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import HeroBanner from '@/components/HeroBanner.vue'
+import HeroBanner from '@/views/home/HeroBanner.vue'
 
 import { Orange } from '@element-plus/icons-vue'
 
@@ -9,6 +9,7 @@ import xiaoju1 from '@/assets/images/xiaoju-1.jpeg'
 import forest1 from '@/assets/images/forest-1.jpeg'
 import miku1 from '@/assets/images/miku-1.jpeg'
 import furina1 from '@/assets/images/furina-1.jpeg'
+import ResumeBanner from './ResumeBanner.vue'
 
 const containerRef = ref(null)
 // 计算滚动偏移
@@ -60,14 +61,17 @@ const handleClick = (e) => {
             <el-carousel-item v-for="(bgUrl, index) in bgUrls" :key="index">
               <!-- 父传子：背景图、板块id、标题组 -->
               <HeroBanner :bgUrl="bgUrl" :artworkId="index">
-                <template #main-title>主标题 - {{ index }}</template>
-                <template #sub-title>副标题 - {{ index }}</template>
+                <template #main-title>项目名称 - {{ index }}</template>
+                <template #sub-title>描述 - {{ index }}</template>
               </HeroBanner>
             </el-carousel-item>
           </el-carousel>
         </section>
-        <section id="banner2" class="prime-banner"></section>
-        <section id="banner3" class="sub-banner"></section>
+        <section id="banner2" class="resume-banner">
+          <ResumeBanner></ResumeBanner>
+        </section>
+        <section id="banner2" class="prime-banner">逐雨</section>
+        <section id="banner3" class="sub-banner">蔷薇、改创计划、与我联系、开发试验场</section>
       </div>
     </el-main>
   </el-container>
@@ -100,13 +104,29 @@ const handleClick = (e) => {
 .home-container-main {
   padding: 0;
 
+  .anchor-ref {
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
+
   .hero-banner {
     height: 750px;
   }
 
-  .anchor-ref {
-    max-height: 100vh;
-    overflow-y: scroll;
+  .resume-banner {
+    margin-top: 10px;
+    height: 700px;
+  }
+  .prime-banner {
+    margin-top: 10px;
+    height: 700px;
+    background-color: lightpink;
+  }
+
+  .sub-banner {
+    min-height: 550px;
+    margin-top: 10px;
+    background-color: lightcoral;
   }
 }
 </style>

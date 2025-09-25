@@ -33,8 +33,13 @@ const handleClick = (e) => {
   <el-container class="container-self">
     <div class="container-aside">
       <!-- 自定义滚动容器需要添加offset和e.preventDefault -->
-      <el-anchor :container="containerRef" direction="vertical" type="default" :offset="viewportOffset"
-        @click="handleClick">
+      <el-anchor
+        :container="containerRef"
+        direction="vertical"
+        type="default"
+        :offset="viewportOffset"
+        @click="handleClick"
+      >
         <el-anchor-link href="#banner1">
           <el-icon class="is-loading" size="50">
             <Orange />
@@ -54,9 +59,9 @@ const handleClick = (e) => {
     </div>
     <el-main class="container-main">
       <div class="anchor-ref" ref="containerRef">
-        <section id="banner1" style="height: 50vh; background-color: lightblue"></section>
-        <section id="banner2" style="height: 50vh; margin-top: 30px; background-color: lightcoral"></section>
-        <section id="banner3" style="height: 50vh; margin-top: 30px; background-color: lightpink"></section>
+        <section id="banner1" style="height: 50vh; background-color: lightblue" />
+        <section id="banner2" style="height: 50vh; margin-top: 30px; background-color: lightcoral" />
+        <section id="banner3" style="height: 50vh; margin-top: 30px; background-color: lightpink" />
       </div>
     </el-main>
   </el-container>

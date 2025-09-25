@@ -1,8 +1,16 @@
 <script setup>
 const props = defineProps({
-  bgUrl: String
+  bgUrl: String,
+  artworkId: Number
 })
 
+const onGettingDetail = (artworkId) => {
+  console.log(props.artworkId, artworkId)
+}
+
+const onExperienceOnline = (artworkId) => {
+  console.log(artworkId)
+}
 </script>
 
 <template>
@@ -19,8 +27,8 @@ const props = defineProps({
         <slot name="sub-title">默认小标题</slot>
       </h3>
       <div class="button-group">
-        <el-button type="primary" round size="large">进一步了解</el-button>
-        <el-button round plain size="large">在线体验</el-button>
+        <el-button type="primary" round size="large" @click="onGettingDetail(artworkId)">进一步了解</el-button>
+        <el-button round plain size="large" @click="onExperienceOnline(artworkId)">在线体验</el-button>
       </div>
     </div>
   </div>

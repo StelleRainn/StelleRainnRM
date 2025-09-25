@@ -17,12 +17,7 @@ const viewportOffset = computed(() => {
   return windowHeight.value * 0.5
 })
 
-const bgUrls = ref([
-  xiaoju1,
-  forest1,
-  miku1,
-  furina1,
-])
+const bgUrls = ref([xiaoju1, forest1, miku1, furina1])
 
 const handleClick = (e) => {
   e.preventDefault()
@@ -33,8 +28,13 @@ const handleClick = (e) => {
   <el-container class="home-container">
     <div class="home-container-aside">
       <!-- 自定义滚动容器需要添加offset和e.preventDefault -->
-      <el-anchor :container="containerRef" direction="vertical" type="default" :offset="viewportOffset"
-        @click="handleClick">
+      <el-anchor
+        :container="containerRef"
+        direction="vertical"
+        type="default"
+        :offset="viewportOffset"
+        @click="handleClick"
+      >
         <el-anchor-link href="#banner1">
           <el-icon class="is-loading" size="50">
             <Orange />

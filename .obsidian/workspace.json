@@ -172,6 +172,10 @@
   },
   "active": "60dd470db4dca6ca",
   "lastOpenFiles": [
+    "test-prettier.js",
+    "test-warnings.js",
+    "src/views/playground/eslint-test.vue",
+    "src/test-eslint.vue",
     "src/assets/images/xiaoju-1.jpeg",
     "src/assets/images/8CEACD2B-1FA4-49BB-9EB8-BCCCFE4A796D_1_105_c.jpeg",
     "src/assets/images/swagii-1.jpeg",
@@ -185,14 +189,10 @@
     "src/views/resume/Resume.vue",
     "src/views/reformCreate/ReformCreate.vue",
     "src/views/home/Home.vue",
-    "src/views/contact/Contact.vue",
-    "src/views/collection/Collection.vue",
-    "src/views/chasingRain/ChasingRain.vue",
     "src/assets/images/columbina-1.jpeg",
     "src/assets/images/furina-1.jpeg",
     "src/assets/images/miku-1.jpeg",
     "src/assets/miku-1.jpeg",
-    "src/assets/E43A7A61-9575-4063-98B7-B7C0FDC0D422_1_105_c.jpeg",
     "dev_track/开发日志.md"
   ]
 }

@@ -65,6 +65,7 @@ const onExperienceOnline = (artworkId) => {
     flex-direction: column;
     align-items: center;
     color: #f3f3f3;
+    letter-spacing: 0.4rem;
 
     // 添加半透明背景以进一步增强可读性
     &::before {
@@ -82,18 +83,42 @@ const onExperienceOnline = (artworkId) => {
       margin-top: 170px;
       font-size: 50px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      animation: fadeUpIn 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-delay: 0.1s;
     }
 
     h3 {
       margin-top: 10px;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+      animation: fadeUpIn 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-delay: 0.2s;
     }
 
     .el-button {
       margin-top: 20px;
       font-family: 'NotoSerifSC', serif;
       letter-spacing: 0.2rem;
+      animation: fadeUpIn 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-delay: 0.3s;
     }
+  }
+}
+
+// 文字淡入效果动画
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

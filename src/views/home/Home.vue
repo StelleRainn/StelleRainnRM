@@ -58,9 +58,10 @@ const handleClick = (e) => {
           <!-- height 高度要和 hero-banner 一致 -->
           <el-carousel height="750px" interval="5000">
             <el-carousel-item v-for="(bgUrl, index) in bgUrls" :key="index">
-              <HeroBanner :bgUrl="bgUrl">
-                <template #main-title>Main Title - {{ index }}</template>
-                <template #sub-title>Sub Title - {{ index }}</template>
+              <!-- 父传子：背景图、板块id、标题组 -->
+              <HeroBanner :bgUrl="bgUrl" :artworkId="index">
+                <template #main-title>主标题 - {{ index }}</template>
+                <template #sub-title>副标题 - {{ index }}</template>
               </HeroBanner>
             </el-carousel-item>
           </el-carousel>
@@ -79,6 +80,7 @@ const handleClick = (e) => {
 }
 
 .home-container-aside {
+  z-index: 999;
   position: fixed;
   left: 5px;
   top: 45vh;

@@ -172,6 +172,7 @@
   },
   "active": "60dd470db4dca6ca",
   "lastOpenFiles": [
+    "src/views/home/SubBanner.vue",
     "src/assets/fonts/ZhongSongSC.ttf",
     "src/assets/fonts/FangSongSC.ttf",
     "src/assets/videos/ChasingRain-Compressed.mp4",
@@ -182,7 +183,6 @@
     "src/assets/fonts/texgyrecursor-regular.otf",
     "src/assets/fonts/LXGWWenKaiMono-Regular.ttf",
     "src/views/home/ResumeBanner.vue",
-    "src/views/home/HeroBanner.vue",
     "src/assets/images/xiaoju-1.jpeg",
     "src/assets/images/8CEACD2B-1FA4-49BB-9EB8-BCCCFE4A796D_1_105_c.jpeg",
     "src/assets/images/swagii-1.jpeg",

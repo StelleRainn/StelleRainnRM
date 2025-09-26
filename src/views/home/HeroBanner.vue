@@ -17,7 +17,7 @@ const onExperienceOnline = (artworkId, e) => {
 <template>
   <!-- Hero Banner 内部样式统一设置 100% 高度， 在外部使用组件时，指定具体高度 -->
   <!-- 动态设置背景 -->
-  <div class="hero-banner-container">
+  <div class="main-container">
     <!-- 背景层 -->
     <div class="background-layer" :style="{ backgroundImage: props.bgUrl ? `url(${props.bgUrl})` : 'none' }"></div>
     <!-- 内容层 -->
@@ -42,7 +42,7 @@ const onExperienceOnline = (artworkId, e) => {
 // 包括最大的容器在内，存在四层结构 → 依次通过两级“子绝父相”完成内容定位、层次的脱标与重叠
 // 通过 filter 属性，直接模糊背景层
 // 通过 z-index 属性，控制层级的重叠效果
-.hero-banner-container {
+.main-container {
   position: relative;
   height: 100%;
   overflow: hidden;

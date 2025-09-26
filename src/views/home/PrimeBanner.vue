@@ -173,7 +173,7 @@ const handleVideoLoad = () => {
 
 @keyframes floating {
   to {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 }
 </style>

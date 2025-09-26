@@ -11,6 +11,7 @@ import miku1 from '@/assets/images/miku-1.jpeg'
 import furina1 from '@/assets/images/furina-1.jpeg'
 import ResumeBanner from './ResumeBanner.vue'
 import PrimeBanner from './PrimeBanner.vue'
+import SubBanner from './SubBanner.vue'
 
 const containerRef = ref(null)
 // 计算滚动偏移
@@ -74,9 +75,15 @@ const handleClick = (e) => {
         <section id="banner2" class="prime-banner">
           <PrimeBanner></PrimeBanner>
         </section>
-        <section id="banner3" class="sub-banner">蔷薇、改创计划、与我联系、开发试验场</section>
+        <section id="banner3" class="sub-banner">
+          <SubBanner v-for="(bgUrl, index) in bgUrls" :key="index" :bgUrl="bgUrl">
+            <template #main-title>项目名称 - {{ index }}</template>
+            <template #sub-title>描述 - {{ index }}</template>
+          </SubBanner>
+        </section>
       </div>
     </el-main>
+    <el-footer> ©️2025 by 水川雨蔷薇 </el-footer>
   </el-container>
 </template>
 
@@ -126,9 +133,12 @@ const handleClick = (e) => {
   }
 
   .sub-banner {
-    min-height: 550px;
-    margin-top: 10px;
-    background-color: lightcoral;
+    margin: 10px;
+    height: fit-content; // 子组件有确定的高度
+    display: grid; // 首次使用网格布局
+    grid-template-columns: repeat(2, 1fr); // 相当于 1fr 1fr，即存在两份网格元素，且按1:1平分剩余空间
+    row-gap: 10px; // gutter 间隙控制
+    column-gap: 10px;
   }
 }
 </style>

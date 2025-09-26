@@ -66,6 +66,7 @@ onMounted(() => {
   width: 100%;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 
   .background-layer {
     z-index: -1;
@@ -91,7 +92,7 @@ onMounted(() => {
     .left-font,
     .right-font {
       font-size: 350px;
-      font-weight: bolder;
+      font-weight: normal;
       text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
       opacity: 0; // 初始状态隐藏
     }

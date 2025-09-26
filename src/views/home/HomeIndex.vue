@@ -10,6 +10,7 @@ import forest1 from '@/assets/images/forest-1.jpeg'
 import miku1 from '@/assets/images/miku-1.jpeg'
 import furina1 from '@/assets/images/furina-1.jpeg'
 import ResumeBanner from './ResumeBanner.vue'
+import PrimeBanner from './PrimeBanner.vue'
 
 const containerRef = ref(null)
 // 计算滚动偏移
@@ -70,7 +71,9 @@ const handleClick = (e) => {
         <section id="banner2" class="resume-banner">
           <ResumeBanner></ResumeBanner>
         </section>
-        <section id="banner2" class="prime-banner">逐雨</section>
+        <section id="banner2" class="prime-banner">
+          <PrimeBanner></PrimeBanner>
+        </section>
         <section id="banner3" class="sub-banner">蔷薇、改创计划、与我联系、开发试验场</section>
       </div>
     </el-main>
@@ -120,7 +123,6 @@ const handleClick = (e) => {
   .prime-banner {
     margin-top: 10px;
     height: 700px;
-    background-color: lightpink;
   }
 
   .sub-banner {

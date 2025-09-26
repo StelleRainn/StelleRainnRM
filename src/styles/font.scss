@@ -4,6 +4,16 @@
 }
 
 @font-face {
+  font-family: 'LXGWWenKaiMono-Regular';
+  src: url('@/assets/fonts/LXGWWenKaiMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'NotoSerifSC';
   src: url('@/assets/fonts/NotoSerifSC-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'texgyrecursor-regular';
+  src: url('@/assets/fonts/texgyrecursor-regular.otf') format('opentype');
 }

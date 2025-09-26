@@ -172,6 +172,8 @@
   },
   "active": "60dd470db4dca6ca",
   "lastOpenFiles": [
+    "src/assets/fonts/texgyrecursor-regular.otf",
+    "src/assets/fonts/LXGWWenKaiMono-Regular.ttf",
     "src/views/home/ResumeBanner.vue",
     "src/views/home/HeroBanner.vue",
     "src/views/home/HomeIndex.vue",
@@ -187,8 +189,6 @@
     "src/assets/images/1D594580-7447-4C6C-A530-7AC9C39FF97B_1_105_c.jpeg",
     "src/components/HeroBanner.vue",
     "src/components/HeroBanner",
-    "src/views/playground/Index.vue",
-    "src/views/rosa/Rosa.vue",
     "src/assets/images/columbina-1.jpeg",
     "src/assets/images/furina-1.jpeg",
     "src/assets/images/miku-1.jpeg",

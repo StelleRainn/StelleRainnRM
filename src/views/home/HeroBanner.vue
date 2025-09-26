@@ -15,7 +15,7 @@ const onExperienceOnline = (artworkId, e) => {
 </script>
 
 <template>
-  <!-- Hero Banner 内部样式统一设置 100% 高度， 在外部使用组件时，制定具体高度 -->
+  <!-- Hero Banner 内部样式统一设置 100% 高度， 在外部使用组件时，指定具体高度 -->
   <!-- 动态设置背景 -->
   <div class="hero-banner-container">
     <!-- 背景层 -->

@@ -46,7 +46,14 @@ onMounted(() => {
 <template>
   <!-- Resume Banner 内部样式统一设置 100% 高度， 在外部使用组件时，指定具体高度 -->
   <div ref="containerRef" class="main-container">
-    <div class="background-layer"></div>
+    <div class="background-layer">
+      <!-- 流光粒子效果 -->
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
     <div class="content-layer">
       <div class="left-font" :class="{ animate: isVisible }">简</div>
       <div class="flash-line" :class="{ animate: isVisible }"></div>
@@ -67,7 +74,10 @@ onMounted(() => {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 
+  /* 流光溢彩动态背景层 */
   .background-layer {
     z-index: -1;
     position: absolute;
@@ -75,13 +85,55 @@ onMounted(() => {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #f3f3f3;
-    // background: url('@/assets/images/resume-bg-1.png') no-repeat center/cover;
-    filter: blur(3px);
-    transform: scale(1.1);
+    overflow: hidden;
+
+    /* 基础渐变背景 - 深邃的夜空色调 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+    background-size: 400% 400%;
+    animation: gradientFlow 8s ease-in-out infinite;
+  }
+
+  /* 添加光点粒子效果 */
+  .background-layer {
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      animation: particleFloat 6s ease-in-out infinite;
+
+      &:nth-child(1) {
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+      &:nth-child(2) {
+        top: 20%;
+        left: 80%;
+        animation-delay: 1s;
+      }
+      &:nth-child(3) {
+        top: 60%;
+        left: 20%;
+        animation-delay: 2s;
+      }
+      &:nth-child(4) {
+        top: 80%;
+        left: 70%;
+        animation-delay: 3s;
+      }
+      &:nth-child(5) {
+        top: 40%;
+        left: 90%;
+        animation-delay: 4s;
+      }
+    }
   }
 
   .content-layer {
+    width: 1300px;
     z-index: 2;
     position: relative;
     height: 100%;
@@ -100,8 +152,9 @@ onMounted(() => {
     .flash-line {
       width: 2px;
       height: 0; // 初始状态为0高度
-      background-color: #000000;
-      box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.7);
+      background: linear-gradient(135deg, #667eea 0%, #f093fb 50%, #4facfe 100%);
+      // background-color: #000000;
+      // box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.7);
       align-self: center; // 从中间开始
     }
 
@@ -127,7 +180,7 @@ onMounted(() => {
       z-index: 2;
       position: absolute;
       bottom: 40%;
-      left: calc(v-bind(viewportWidthPx50P) - 54px);
+      left: 580px;
       .el-button {
         font-family: 'NotoSerifSC';
         letter-spacing: 0.2rem;
@@ -166,7 +219,7 @@ onMounted(() => {
 @keyframes flashToLeft {
   from {
     opacity: 0;
-    transform: translateX(v-bind(viewportWidthPx30P));
+    transform: translateX(350px);
   }
   to {
     opacity: 1;
@@ -177,7 +230,7 @@ onMounted(() => {
 @keyframes flashToRight {
   from {
     opacity: 0;
-    transform: translateX(calc(-1 * v-bind(viewportWidthPx30P)));
+    transform: translateX(calc(-1 * 350px));
   }
   to {
     opacity: 1;
@@ -197,6 +250,34 @@ onMounted(() => {
   }
   100% {
     height: 0; // 谢幕消失
+  }
+}
+
+/* 流光溢彩背景动画关键帧 */
+
+/* 渐变色彩流动动画 */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 粒子飘浮动画 */
+@keyframes particleFloat {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 1;
   }
 }
 

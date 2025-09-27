@@ -21,6 +21,12 @@ const viewportOffset = computed(() => {
 })
 
 const bgUrls = ref([xiaoju1, forest1, miku1, furina1])
+const subTitles = ref([
+  { mainTitle: '蔷薇', subTitle: '向一朵玫瑰起誓', bgUrl: xiaoju1 },
+  { mainTitle: '改创计划', subTitle: '一个崭新的黎明近在咫尺', bgUrl: forest1 },
+  { mainTitle: '与我联系', subTitle: '你的意见，我听得见', bgUrl: miku1 },
+  { mainTitle: '试验场', subTitle: '探索网站背后所采用的原型技术', bgUrl: furina1 }
+])
 
 const handleClick = (e) => {
   e.preventDefault()
@@ -59,7 +65,7 @@ const handleClick = (e) => {
       <div class="anchor-ref" ref="containerRef">
         <section id="banner1" class="hero-banner">
           <!-- height 高度要和 hero-banner 一致 -->
-          <el-carousel height="750px" interval="5000">
+          <el-carousel height="750px" interval="5000" :pause-on-hover="false">
             <el-carousel-item v-for="(bgUrl, index) in bgUrls" :key="index">
               <!-- 父传子：背景图、板块id、标题组 -->
               <HeroBanner :bgUrl="bgUrl" :artworkId="index">
@@ -76,9 +82,9 @@ const handleClick = (e) => {
           <PrimeBanner></PrimeBanner>
         </section>
         <section id="banner3" class="sub-banner">
-          <SubBanner v-for="(bgUrl, index) in bgUrls" :key="index" :bgUrl="bgUrl">
-            <template #main-title>项目名称 - {{ index }}</template>
-            <template #sub-title>描述 - {{ index }}</template>
+          <SubBanner v-for="(item, index) in subTitles" :key="index" :bgUrl="item.bgUrl">
+            <template #main-title>{{ item.mainTitle }}</template>
+            <template #sub-title>{{ item.subTitle }}</template>
           </SubBanner>
         </section>
       </div>
@@ -116,7 +122,7 @@ const handleClick = (e) => {
 
   .anchor-ref {
     max-height: 100vh;
-    overflow-y: scroll;
+    overflow-y: auto; // 滚动条
   }
 
   .hero-banner {

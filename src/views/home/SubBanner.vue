@@ -63,7 +63,7 @@ const onMouseLeave = () => {
 }
 
 .prevent-overflow {
-  height: 580px;
+  height: 480px;
   overflow: hidden;
 }
 

@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import { ArrowRight } from '@element-plus/icons-vue'
 const props = defineProps({
   bgUrl: String
 })
@@ -13,14 +14,14 @@ const handleClick = (url, e) => {
 // 控制样式
 const onMouseEnter = () => {
   mainContainerRef.value?.querySelector('.background-layer').classList.add('scaler')
-  mainContainerRef.value?.querySelector('.main-title').classList.add('floater')
-  mainContainerRef.value?.querySelector('.sub-title').classList.add('floater')
+  mainContainerRef.value?.querySelector('.text-group').classList.add('floater')
+  mainContainerRef.value?.querySelector('.el-icon').classList.add('floater')
 }
 
 const onMouseLeave = () => {
   mainContainerRef.value?.querySelector('.background-layer').classList.remove('scaler')
-  mainContainerRef.value?.querySelector('.main-title').classList.remove('floater')
-  mainContainerRef.value?.querySelector('.sub-title').classList.remove('floater')
+  mainContainerRef.value?.querySelector('.text-group').classList.remove('floater')
+  mainContainerRef.value?.querySelector('.el-icon').classList.remove('floater')
 }
 </script>
 
@@ -38,12 +39,15 @@ const onMouseLeave = () => {
     >
       <div class="background-layer" :style="{ backgroundImage: props.bgUrl ? `url(${props.bgUrl})` : `none` }"></div>
       <div class="content-layer">
-        <div class="main-title">
-          <slot name="main-title"></slot>
+        <div class="text-group">
+          <div class="main-title">
+            <slot name="main-title"></slot>
+          </div>
+          <div class="sub-title">
+            <slot name="sub-title"></slot>
+          </div>
         </div>
-        <div class="sub-title">
-          <slot name="sub-title"></slot>
-        </div>
+        <el-icon size="30px"><ArrowRight /></el-icon>
       </div>
     </div>
   </div>
@@ -90,20 +94,28 @@ const onMouseLeave = () => {
     height: 100%;
     color: #f3f3f3;
     display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: start;
+    justify-content: space-between;
+    align-items: flex-end;
 
-    .main-title {
-      font-size: 3rem;
-      letter-spacing: 0.5rem;
-      margin: 0 0 10px 20px;
+    .text-group {
       transition: all 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+
+      .main-title {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+        margin: 0 0 10px 20px;
+      }
+
+      .sub-title {
+        font-size: 0.9rem;
+        margin: 0 0 20px 25px;
+      }
     }
 
-    .sub-title {
-      font-size: 0.9rem;
-      margin: 0 0 20px 25px;
+    .el-icon {
+      padding: 0 30px 30px 0;
       transition: all 0.3s ease-in-out;
     }
 

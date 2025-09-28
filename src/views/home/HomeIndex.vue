@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 import HeroBanner from '@/views/home/HeroBanner.vue'
 
-import { Orange } from '@element-plus/icons-vue'
+import { ArrowDown } from '@element-plus/icons-vue'
 
 // 导入图片
 import xiaoju1 from '@/assets/images/xiaoju-1.jpeg'
@@ -43,22 +43,23 @@ const handleClick = (e) => {
         type="default"
         :offset="viewportOffset"
         @click="handleClick"
+        :marker="false"
       >
         <el-anchor-link href="#banner1">
-          <el-icon class="is-loading" size="50">
-            <Orange />
-          </el-icon>
+          <el-icon size="50"><ArrowDown /></el-icon>
         </el-anchor-link>
         <el-anchor-link href="#banner2">
-          <el-icon class="is-loading" size="50">
-            <Orange />
-          </el-icon>
+          <el-icon size="50"><ArrowDown /></el-icon>
         </el-anchor-link>
         <el-anchor-link href="#banner3">
-          <el-icon class="is-loading" size="50">
-            <Orange />
-          </el-icon>
+          <el-icon size="50"><ArrowDown /></el-icon>
         </el-anchor-link>
+        <el-anchor-link href="#banner4">
+          <el-icon size="50"><ArrowDown /></el-icon>
+        </el-anchor-link>
+        <!-- <el-anchor-link href="#footer">
+          <el-icon size="50"><ArrowDown /></el-icon>
+        </el-anchor-link> -->
       </el-anchor>
     </div>
     <el-main class="home-container-main">
@@ -78,18 +79,20 @@ const handleClick = (e) => {
         <section id="banner2" class="resume-banner">
           <ResumeBanner></ResumeBanner>
         </section>
-        <section id="banner2" class="prime-banner">
+        <section id="banner3" class="prime-banner">
           <PrimeBanner></PrimeBanner>
         </section>
-        <section id="banner3" class="sub-banner">
+        <section id="banner4" class="sub-banner">
           <SubBanner v-for="(item, index) in subTitles" :key="index" :bgUrl="item.bgUrl">
             <template #main-title>{{ item.mainTitle }}</template>
             <template #sub-title>{{ item.subTitle }}</template>
           </SubBanner>
         </section>
+        <section id="footer">
+          <footer class="home-footer">Copyright © 2025 水川雨蔷薇. 保留所有权利。</footer>
+        </section>
       </div>
     </el-main>
-    <el-footer> ©️2025 by 水川雨蔷薇 </el-footer>
   </el-container>
 </template>
 
@@ -97,6 +100,8 @@ const handleClick = (e) => {
 .home-container {
   min-height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-container-aside {
@@ -113,7 +118,28 @@ const handleClick = (e) => {
 
     .el-anchor__item {
       padding: 10px 0;
+      &:nth-child(1) {
+        animation: floating 1s linear infinite alternate forwards;
+      }
+      &:nth-child(2) {
+        animation: floating 1s linear 0.4s infinite alternate forwards;
+      }
+      &:nth-child(3) {
+        animation: floating 1s linear 0.6s infinite alternate forwards;
+      }
+      &:nth-child(4) {
+        animation: floating 1s linear 0.8s infinite alternate forwards;
+      }
+      &:nth-child(5) {
+        animation: floating 1s linear 1s infinite alternate forwards;
+      }
     }
+  }
+}
+
+@keyframes floating {
+  to {
+    transform: translateY(10px);
   }
 }
 
@@ -145,6 +171,12 @@ const handleClick = (e) => {
     grid-template-columns: repeat(2, 1fr); // 相当于 1fr 1fr，即存在两份网格元素，且按1:1平分剩余空间
     row-gap: 10px; // gutter 间隙控制
     column-gap: 10px;
+  }
+
+  .home-footer {
+    height: 100px;
+    background-color: #f3f3f3;
+    text-align: center;
   }
 }
 </style>

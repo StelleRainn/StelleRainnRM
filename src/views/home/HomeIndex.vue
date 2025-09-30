@@ -66,7 +66,7 @@ const handleClick = (e) => {
       <div class="anchor-ref" ref="containerRef">
         <section id="banner1" class="hero-banner">
           <!-- height 高度要和 hero-banner 一致 -->
-          <el-carousel height="100vh" interval="5000" :pause-on-hover="false" arrow="never">
+          <el-carousel height="750px" interval="5000" :pause-on-hover="false" arrow="never">
             <el-carousel-item v-for="(bgUrl, index) in bgUrls" :key="index">
               <!-- 父传子：背景图、板块id、标题组 -->
               <HeroBanner :bgUrl="bgUrl" :artworkId="index">
@@ -152,7 +152,7 @@ const handleClick = (e) => {
   }
 
   .hero-banner {
-    height: 100vh;
+    height: 750px;
   }
 
   .resume-banner {

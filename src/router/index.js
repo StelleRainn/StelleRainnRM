@@ -6,7 +6,7 @@ const router = createRouter({
     { path: '/', component: import('@/App.vue'), redirect: '/home' },
     { path: '/home', component: import('@/views/home/HomeIndex.vue') },
     { path: '/resume', component: import('@/views/resume/Resume.vue') },
-    { path: '/collection', component: import('@/views/collection/Collection.vue') },
+    { path: '/collection', component: import('@/views/collection/CollectionIndex.vue') },
     { path: '/chasing-rain', component: import('@/views/chasingRain/ChasingRain.vue') },
     { path: '/rosa', component: import('@/views/rosa/Rosa.vue') },
     { path: '/reform-create', component: import('@/views/reformCreate/ReformCreate.vue') },

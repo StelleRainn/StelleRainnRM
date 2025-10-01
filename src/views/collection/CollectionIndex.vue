@@ -1,12 +1,13 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
+import { ArrowLeftBold, ArrowRightBold } from '@element-plus/icons-vue'
 import GeneralHeader from '@/components/GeneralHeader.vue'
 
-import bilibiliLogo from '@/assets/images/logos/bilibili-logo.png'
-import rosaLogo from '@/assets/images/logos/rosa-logo.svg'
-import vantLogo from '@/assets/images/logos/vant-logo.png'
-import weraceLogo from '@/assets/images/logos/werace-logo.svg'
-import xtxLogo from '@/assets/images/logos/xtx-logo.png'
+import bilibiliLogo from '@/assets/images/logos/bilibili-down.png'
+import rosaLogo from '@/assets/images/logos/rosa-down.png'
+import vantLogo from '@/assets/images/logos/vant-down.png'
+import weraceLogo from '@/assets/images/logos/u9-down.png'
+import xtxLogo from '@/assets/images/logos/xtx-down.png'
 
 const headerContents = ref([
   { imgUrl: rosaLogo, name: '蔷薇丛的小书架' },
@@ -15,53 +16,281 @@ const headerContents = ref([
   { imgUrl: weraceLogo, name: 'WeRace' },
   { imgUrl: bilibiliLogo, name: 'B站首页复刻' }
 ])
+
+// 画廊相关：ref、限位与节流状态 （Generate by TRAE）
+const galleryListRef = ref(null)
+const isAnimating = ref(false)
+const canPrev = ref(false)
+const canNext = ref(true)
+// 每次前进/后退的像素步长（可按需调整）
+const SCROLL_STEP = 200
+// 动画时长（毫秒）
+const ANIM_DURATION = 450
+
+const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
+
+const updateLimits = () => {
+  const el = galleryListRef.value
+  if (!el) return
+  const max = el.scrollWidth - el.clientWidth
+  const left = el.scrollLeft
+  canPrev.value = left > 0
+  canNext.value = left < max - 1 // 减1避免浮点误差导致按钮迟迟不禁用
+}
+
+const onGalleryScroll = () => {
+  updateLimits()
+}
+
+const scrollBySmooth = async (el, delta) => {
+  if (!el) return
+  const startLeft = el.scrollLeft
+  const max = el.scrollWidth - el.clientWidth
+  const target = Math.max(0, Math.min(startLeft + delta, max))
+  const distance = target - startLeft
+  if (distance === 0) return
+  isAnimating.value = true
+  const startTime = performance.now()
+
+  return new Promise((resolve) => {
+    const step = (now) => {
+      const elapsed = now - startTime
+      const t = Math.min(1, elapsed / ANIM_DURATION)
+      const eased = easeInOutCubic(t)
+      el.scrollLeft = startLeft + distance * eased
+      if (t < 1) {
+        requestAnimationFrame(step)
+      } else {
+        isAnimating.value = false
+        updateLimits()
+        resolve()
+      }
+    }
+    requestAnimationFrame(step)
+  })
+}
+
+const onPrev = async () => {
+  if (isAnimating.value || !canPrev.value) return
+  await scrollBySmooth(galleryListRef.value, -SCROLL_STEP)
+}
+
+const onNext = async () => {
+  if (isAnimating.value || !canNext.value) return
+  await scrollBySmooth(galleryListRef.value, SCROLL_STEP)
+}
+
+onMounted(async () => {
+  await nextTick()
+  updateLimits()
+})
+
+// 防止模板引用未定义方法导致报错
+const handleVideoLoad = () => {}
 </script>
 
 <template>
-  <span>
-    <GeneralHeader></GeneralHeader>
-    <header class="collection-index-header">
-      <ul>
-        <li v-for="content in headerContents" :key="content.imgUrl">
-          <img :src="content.imgUrl" />
-          <span>{{ content.name }}</span>
-        </li>
-      </ul>
-    </header>
-  </span>
+  <GeneralHeader></GeneralHeader>
+  <header class="collection-index-header">
+    <ul>
+      <li v-for="content in headerContents" :key="content.imgUrl">
+        <img :src="content.imgUrl" />
+        <span>{{ content.name }}</span>
+      </li>
+    </ul>
+  </header>
+  <main>
+    <section class="intro">
+      <h1 class="intro-title">作品合集</h1>
+      <div class="intro-desc">
+        <p>从在桌面随意新建的 index.html，</p>
+        <p>到结构井然有序的 Vue 3 工程。</p>
+      </div>
+    </section>
+    <section class="video">
+      <video
+        autoplay
+        loop
+        muted
+        preload="auto"
+        playsinline
+        @loadeddata="handleVideoLoad"
+        class="background-video"
+        playbackRate="2"
+      >
+        <source src="@/assets/videos/webstorm-release.mp4" type="video/mp4" />
+        <!-- 视频加载失败时的后备背景 -->
+        <div class="video-fallback"></div>
+      </video>
+      <!-- 可选：在视频上添加遮罩层 -->
+      <div class="video-overlay"></div>
+    </section>
+    <section class="projects">
+      <div class="welcome">
+        <h1>查看不同作品</h1>
+      </div>
+      <div class="gallery">
+        <ul ref="galleryListRef" @scroll="onGalleryScroll">
+          <li v-for="item in 5" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="gallery-control">
+        <el-button
+          type="info"
+          circle
+          :icon="ArrowLeftBold"
+          size="large"
+          :disabled="!canPrev || isAnimating"
+          @click="onPrev"
+        ></el-button>
+        <el-button
+          type="info"
+          circle
+          :icon="ArrowRightBold"
+          size="large"
+          :disabled="!canNext || isAnimating"
+          @click="onNext"
+        ></el-button>
+      </div>
+    </section>
+  </main>
 </template>
 
 <style lang="scss" scoped>
 .collection-index-header {
-  height: 150px;
   background-color: #222222;
-  padding-top: 60px;
+  padding: 45px 0 40px 0;
+  margin: 0 0 8px 0;
 
   ul {
     width: 100%;
+    height: 100px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
 
     li {
-      width: 200px;
+      width: 130px;
       margin: 0 5px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
-      height: 120px;
 
       img {
-        max-width: 70px;
-        max-height: 100px;
-        justify-self: center;
+        max-width: 90px;
+        margin-bottom: 16px;
       }
 
       span {
-        font-size: 0.8rem;
-        color: #cfcfcf;
+        font-size: 13px;
+        line-height: 13px;
+        color: rgba(255, 255, 255, 1);
       }
+    }
+  }
+}
+
+main {
+  width: 100%;
+  margin: 0 0 8px 0;
+
+  .intro {
+    height: 200px;
+    padding: 0 80px;
+    margin: 0 0 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .intro-title {
+      font-size: 64px;
+      letter-spacing: 0.4rem;
+    }
+
+    .intro-desc {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  .video {
+    height: 650px;
+    width: 100%;
+    margin: 0 0 8px 0;
+    position: relative;
+
+    .background-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // 确保视频覆盖整个区域，类似background-size: cover
+      object-position: center; // 视频居中显示
+    }
+
+    // 可选：视频遮罩层，用于调整视频亮度或添加颜色叠加
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // background: rgba(0, 0, 0, 0.3); // 半透明黑色遮罩
+      // background: linear-gradient(45deg, rgba(255,0,150,0.3), rgba(0,255,255,0.3)); // 彩色渐变遮罩
+    }
+
+    // 视频加载失败时的后备样式
+    .video-fallback {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+  }
+
+  .projects {
+    position: relative;
+    height: fit-content;
+    background-color: #f3f3f3;
+    width: 100%;
+    padding: 100px 0 100px 0; // 不要在这里加左右边距，会撑出 main 的范围。
+    overflow: hidden;
+
+    h1,
+    .gallery {
+      padding-left: 80px;
+    }
+
+    h1 {
+      font-size: 56px;
+      letter-spacing: 0.4rem;
+    }
+
+    .gallery {
+      margin-top: 30px;
+      width: 100%;
+
+      ul {
+        list-style: none;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+        overflow: scroll;
+
+        li {
+          width: 400px;
+          height: 700px;
+          background-color: cyan;
+        }
+      }
+    }
+
+    .gallery-control {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
     }
   }
 }

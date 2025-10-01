@@ -8,6 +8,7 @@ import rosaLogo from '@/assets/images/logos/rosa-down.png'
 import vantLogo from '@/assets/images/logos/vant-down.png'
 import weraceLogo from '@/assets/images/logos/u9-down.png'
 import xtxLogo from '@/assets/images/logos/xtx-down.png'
+import SingleCollectionPreview from './components/SingleCollectionPreview.vue'
 
 const headerContents = ref([
   { imgUrl: rosaLogo, name: '蔷薇丛的小书架' },
@@ -17,13 +18,21 @@ const headerContents = ref([
   { imgUrl: bilibiliLogo, name: 'B站首页复刻' }
 ])
 
-// 画廊相关：ref、限位与节流状态 （Generate by TRAE）
+const galleryListContents = ref([
+  { imgUrl: rosaLogo, name: '蔷薇丛的小书架', desc: 'Vue 3 项目，大量使用 Element Plus 组件库' },
+  { imgUrl: vantLogo, name: '智慧商城', desc: 'Vue 2 项目，配合 Vant UI 实现，移动端布局' },
+  { imgUrl: xtxLogo, name: '小兔鲜儿', desc: '纯 HTML + CSS 项目' },
+  { imgUrl: weraceLogo, name: 'WeRace', desc: 'PHP & MySQL 项目，强化了前端基础，打通了基础全栈' },
+  { imgUrl: bilibiliLogo, name: 'B站首页复刻', desc: '第一份前端工程，HTML + CSS + 少量 JS' }
+])
+
+// 画廊相关：ref、限位与节流状态 （Generate by TRAE AI）
 const galleryListRef = ref(null)
 const isAnimating = ref(false)
 const canPrev = ref(false)
 const canNext = ref(true)
 // 每次前进/后退的像素步长（可按需调整）
-const SCROLL_STEP = 200
+const SCROLL_STEP = 320
 // 动画时长（毫秒）
 const ANIM_DURATION = 450
 
@@ -131,7 +140,13 @@ const handleVideoLoad = () => {}
       </div>
       <div class="gallery">
         <ul ref="galleryListRef" @scroll="onGalleryScroll">
-          <li v-for="item in 5" :key="item">{{ item }}</li>
+          <!-- li 已指定宽高 -->
+          <li v-for="content in galleryListContents" :key="content">
+            <SingleCollectionPreview :imgUrl="content.imgUrl">
+              <template #project-name>{{ content.name }}</template>
+              <template #project-desc>{{ content.desc }}</template>
+            </SingleCollectionPreview>
+          </li>
         </ul>
       </div>
       <div class="gallery-control">
@@ -282,7 +297,6 @@ main {
         li {
           width: 400px;
           height: 700px;
-          background-color: cyan;
         }
       }
     }

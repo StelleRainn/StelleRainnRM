@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick, computed } from 'vue'
 import { ArrowLeftBold, ArrowRightBold } from '@element-plus/icons-vue'
 import GeneralHeader from '@/components/GeneralHeader.vue'
 
@@ -96,6 +96,40 @@ onMounted(async () => {
 
 // 防止模板引用未定义方法导致报错
 const handleVideoLoad = () => {}
+
+// ===== 滚动驱动的视频缩放与圆角效果 （By TRAE AI） =====
+// 目标：滚动到一定程度后，视频左右各留白 80px，并增加大圆角
+const SCROLL_RANGE = 400 // 滚动区间（像素）内完成过渡，可按需调整
+const SIDE_MARGIN_TARGET = 80 // 两侧目标留白（像素）
+const MAX_SHRINK_PX = SIDE_MARGIN_TARGET * 2 // 总缩减宽度（像素）
+const FINAL_RADIUS = 32 // 最终圆角（像素），可按需调整为更大
+
+const scrollProgress = ref(0)
+const videoStyle = computed(() => {
+  const p = scrollProgress.value
+  return {
+    width: `calc(100vw - ${p * MAX_SHRINK_PX}px)`,
+    height: '100%',
+    borderRadius: `${p * FINAL_RADIUS}px`,
+    overflow: 'hidden',
+    margin: '0 auto',
+    position: 'relative'
+  }
+})
+
+const onScroll = () => {
+  const y = window.scrollY || 0
+  const p = Math.min(Math.max(y / SCROLL_RANGE, 0), 1)
+  scrollProgress.value = p
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+})
 </script>
 
 <template>
@@ -117,22 +151,24 @@ const handleVideoLoad = () => {}
       </div>
     </section>
     <section class="video">
-      <video
-        autoplay
-        loop
-        muted
-        preload="auto"
-        playsinline
-        @loadeddata="handleVideoLoad"
-        class="background-video"
-        playbackRate="2"
-      >
-        <source src="@/assets/videos/webstorm-release.mp4" type="video/mp4" />
-        <!-- 视频加载失败时的后备背景 -->
-        <div class="video-fallback"></div>
-      </video>
-      <!-- 可选：在视频上添加遮罩层 -->
-      <div class="video-overlay"></div>
+      <div class="video-frame" :style="videoStyle">
+        <video
+          autoplay
+          loop
+          muted
+          preload="auto"
+          playsinline
+          @loadeddata="handleVideoLoad"
+          class="background-video"
+          playbackRate="2"
+        >
+          <source src="@/assets/videos/webstorm-release.mp4" type="video/mp4" />
+          <!-- 视频加载失败时的后备背景 -->
+          <div class="video-fallback"></div>
+        </video>
+        <!-- 可选：在视频上添加遮罩层 -->
+        <div class="video-overlay"></div>
+      </div>
     </section>
     <section class="projects">
       <div class="welcome">
@@ -230,10 +266,16 @@ main {
   }
 
   .video {
-    height: 650px;
+    height: 1000px;
     width: 100%;
     margin: 0 0 8px 0;
     position: relative;
+
+    .video-frame {
+      height: 100%;
+      // width 通过内联样式动态控制
+      display: block;
+    }
 
     .background-video {
       width: 100%;
@@ -267,7 +309,7 @@ main {
   .projects {
     position: relative;
     height: fit-content;
-    background-color: #f3f3f3;
+
     width: 100%;
     padding: 100px 0 100px 0; // 不要在这里加左右边距，会撑出 main 的范围。
     overflow: hidden;

@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import HeroBanner from '@/views/home/HeroBanner.vue'
+import HeroBanner from '@/views/home/components/HeroBanner.vue'
 
 import { ArrowDown } from '@element-plus/icons-vue'
 
@@ -9,9 +9,9 @@ import xiaoju1 from '@/assets/images/xiaoju-1.jpeg'
 import forest1 from '@/assets/images/forest-1.jpeg'
 import miku1 from '@/assets/images/miku-1.jpeg'
 import furina1 from '@/assets/images/furina-1.jpeg'
-import ResumeBanner from './ResumeBanner.vue'
-import PrimeBanner from './PrimeBanner.vue'
-import SubBanner from './SubBanner.vue'
+import ResumeBanner from './components/ResumeBanner.vue'
+import PrimeBanner from './components/PrimeBanner.vue'
+import SubBanner from './components/SubBanner.vue'
 
 const containerRef = ref(null)
 // 计算滚动偏移

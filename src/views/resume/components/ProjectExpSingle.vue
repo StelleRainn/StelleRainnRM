@@ -9,7 +9,7 @@ const isLeft = computed(() => props.projectIndex % 2 === 0)
 </script>
 
 <template>
-  <div class="main-container" @click="console.log(props.projectIndex)">
+  <div class="main-container" :class="{ isRight: !isLeft }" @click="console.log(props.projectIndex)">
     <div
       class="background-layer"
       :style="{
@@ -17,7 +17,7 @@ const isLeft = computed(() => props.projectIndex % 2 === 0)
       }"
     ></div>
 
-    <div class="content-layer" :class="{ isRight: !isLeft }">
+    <div class="content-layer">
       <div class="project-name">
         {{ props.projectDetail.projectName }}
       </div>
@@ -35,28 +35,32 @@ const isLeft = computed(() => props.projectIndex % 2 === 0)
 .main-container {
   height: 100%;
   width: 100%;
-  border-radius: 30px;
-  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
-  position: relative;
-
   overflow: hidden;
+
+  display: flex;
+
+  position: relative;
 }
 
+// 背景层
 .background-layer {
-  height: 100%;
-  width: 100%;
-  z-index: 0;
-
-  background-position: bottom left;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: blur(5px);
-
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
+  height: 100%;
+  width: 1000px; // 根据最终图像决定是百分比(推荐：70%)还是定长（1000px）
+  z-index: 0;
 
-  // 增强阅读体验
+  // bgPosition和定位position的配合尚有瑕疵，考虑根据最终 素材 ，如要需要再做调整
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // filter: blur(5px);
+}
+
+// 内容层 - “创造一块玻璃”
+.content-layer {
+  // 遮罩 - 增强阅读体验
   &::before {
     content: '';
     position: absolute;
@@ -64,17 +68,22 @@ const isLeft = computed(() => props.projectIndex % 2 === 0)
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(222, 222, 222, 0.3); // 为保证阅读体验， Alpha 透明度不宜低于 0.3
     z-index: -1;
+    border-radius: 30px;
   }
-}
 
-.content-layer {
   height: 100%;
-  width: 100%;
+  width: 700px;
+  padding: 0 40px 40px 40px;
+  margin-bottom: 20px; // 让底部阴影完全显示
+
   position: relative;
   z-index: 2;
-  padding-bottom: 40px;
+
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
 
   .project-name {
     padding: 0 20px;
@@ -105,6 +114,13 @@ const isLeft = computed(() => props.projectIndex % 2 === 0)
 
 // 如果在右边，则右对齐
 .isRight {
+  justify-content: end;
+
+  .background-layer {
+    top: 0;
+    left: 0 !important; // 加入优先级，覆盖原定位
+  }
+
   .project-name {
     text-align: end;
   }

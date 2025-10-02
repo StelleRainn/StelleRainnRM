@@ -300,18 +300,26 @@ const projectDetails = ref([
       display: flex;
       flex-direction: column;
 
+      // 原方案 - 背景与内容同位
+      // .projects-list-item {
+      //   height: fit-content;
+      //   width: 700px;
+      //   margin-bottom: 32px;
+
+      //   &:nth-child(odd) {
+      //   }
+
+      //   // 错位排开
+      //   &:nth-child(even) {
+      //     align-self: flex-end;
+      //   }
+      // }
+
+      // 方案 2 - 背景与内容错位
       .projects-list-item {
         height: fit-content;
-        width: 700px;
+        width: 100%;
         margin-bottom: 32px;
-
-        &:nth-child(odd) {
-        }
-
-        // 错位排开
-        &:nth-child(even) {
-          align-self: flex-end;
-        }
       }
     }
   }

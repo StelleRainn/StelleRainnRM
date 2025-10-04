@@ -8,7 +8,7 @@ import rosaLogo from '@/assets/images/logos/rosa-down.png'
 import vantLogo from '@/assets/images/logos/vant-down.png'
 import weraceLogo from '@/assets/images/logos/u9-down.png'
 import xtxLogo from '@/assets/images/logos/xtx-down.png'
-import SingleCollectionPreview from './components/SingleCollectionPreview.vue'
+import ProjectPreviewSingle from './components/ProjectPreviewSingle.vue'
 
 const headerContents = ref([
   { imgUrl: rosaLogo, name: '蔷薇丛的小书架' },
@@ -178,10 +178,10 @@ onUnmounted(() => {
         <ul ref="galleryListRef" @scroll="onGalleryScroll">
           <!-- li 已指定宽高 -->
           <li v-for="content in galleryListContents" :key="content">
-            <SingleCollectionPreview :imgUrl="content.imgUrl">
+            <ProjectPreviewSingle :imgUrl="content.imgUrl">
               <template #project-name>{{ content.name }}</template>
               <template #project-desc>{{ content.desc }}</template>
-            </SingleCollectionPreview>
+            </ProjectPreviewSingle>
           </li>
         </ul>
       </div>

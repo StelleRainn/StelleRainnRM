@@ -85,7 +85,10 @@ const projectDetails = ref([
   <GeneralHeader></GeneralHeader>
   <div class="resume-index-header">
     <h1>个人简历</h1>
-    <h3>以小见大，潜力迸发</h3>
+    <div>
+      <p>以小见大，</p>
+      <p>潜力迸发。</p>
+    </div>
   </div>
   <div class="main-container">
     <div class="personal-info">
@@ -147,19 +150,21 @@ const projectDetails = ref([
 .resume-index-header {
   width: 100%;
   height: 230px;
-  padding-top: 65px;
-  text-align: center;
+  padding: 65px 120px 0 80px;
   margin-bottom: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   h1 {
     font-size: 64px;
-    letter-spacing: 2rem;
+    letter-spacing: 0.4rem;
   }
 
-  h3 {
-    font-size: 32px;
-    letter-spacing: 1rem;
-    color: #8f8f8f;
+  div {
+    font-size: 30px;
+    font-weight: bold;
   }
 }
 

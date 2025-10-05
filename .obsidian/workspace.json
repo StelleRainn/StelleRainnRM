@@ -172,6 +172,7 @@
   },
   "active": "60dd470db4dca6ca",
   "lastOpenFiles": [
+    "src/components/ProjectDetails.vue",
     "src/views/collection/components/ProjectPreviewSingle.vue",
     "src/views/home/SubBanner.vue",
     "src/assets/fonts/ZhongSongSC.ttf",
@@ -182,7 +183,6 @@
     "src/assets/videos",
     "src/views/home/PrimeBanner.vue",
     "src/assets/fonts/texgyrecursor-regular.otf",
-    "src/assets/fonts/LXGWWenKaiMono-Regular.ttf",
     "src/assets/images/xiaoju-1.jpeg",
     "src/assets/images/8CEACD2B-1FA4-49BB-9EB8-BCCCFE4A796D_1_105_c.jpeg",
     "src/assets/images/swagii-1.jpeg",

@@ -19,11 +19,11 @@ const headerContents = ref([
 ])
 
 const galleryListContents = ref([
-  { imgUrl: rosaLogo, name: '蔷薇丛的小书架', desc: 'Vue 3 项目，大量使用 Element Plus 组件库' },
-  { imgUrl: vantLogo, name: '智慧商城', desc: 'Vue 2 项目，配合 Vant UI 实现，移动端布局' },
-  { imgUrl: xtxLogo, name: '小兔鲜儿', desc: '纯 HTML + CSS 项目' },
-  { imgUrl: weraceLogo, name: 'WeRace', desc: 'PHP & MySQL 项目，强化了前端基础，打通了基础全栈' },
-  { imgUrl: bilibiliLogo, name: 'B站首页复刻', desc: '第一份前端工程，HTML + CSS + 少量 JS' }
+  { id: 1, imgUrl: rosaLogo, name: '蔷薇丛的小书架', desc: 'Vue 3 项目，大量使用 Element Plus 组件库' },
+  { id: 2, imgUrl: vantLogo, name: '智慧商城', desc: 'Vue 2 项目，配合 Vant UI 实现，移动端布局' },
+  { id: 3, imgUrl: xtxLogo, name: '小兔鲜儿', desc: '纯 HTML + CSS 项目' },
+  { id: 4, imgUrl: weraceLogo, name: 'WeRace', desc: 'PHP & MySQL 项目，强化了前端基础，打通了基础全栈' },
+  { id: 5, imgUrl: bilibiliLogo, name: 'B站首页复刻', desc: '第一份前端工程，HTML + CSS + 少量 JS' }
 ])
 
 // 画廊相关：ref、限位与节流状态 （Generate by TRAE AI）
@@ -178,7 +178,7 @@ onUnmounted(() => {
         <ul ref="galleryListRef" @scroll="onGalleryScroll">
           <!-- li 已指定宽高 -->
           <li v-for="content in galleryListContents" :key="content">
-            <ProjectPreviewSingle :imgUrl="content.imgUrl">
+            <ProjectPreviewSingle :imgUrl="content.imgUrl" :id="content.id">
               <template #project-name>{{ content.name }}</template>
               <template #project-desc>{{ content.desc }}</template>
             </ProjectPreviewSingle>

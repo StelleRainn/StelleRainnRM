@@ -1,14 +1,25 @@
 <script setup>
+import router from '@/router'
 import { ArrowRight } from '@element-plus/icons-vue'
 
 const props = defineProps({
+  id: Number || String,
   imgUrl: String
 })
+
+const onVisit = () => {
+  router.push({
+    name: 'project',
+    params: {
+      id: props.id
+    }
+  })
+}
 </script>
 
 <template>
   <div class="main-container">
-    <img :src="props.imgUrl" />
+    <img @click="onVisit" :src="props.imgUrl" />
     <div class="project-name">
       <slot name="project-name">default-name</slot>
     </div>
@@ -20,7 +31,7 @@ const props = defineProps({
         访问 Github
         <el-icon><ArrowRight /></el-icon>
       </el-button>
-      <el-button type="primary" round size="large">在线体验</el-button>
+      <el-button @click="onVisit" type="primary" round size="large">在线体验</el-button>
     </div>
   </div>
 </template>

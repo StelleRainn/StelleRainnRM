@@ -9,8 +9,8 @@ const props = defineProps({
 
 const onVisit = () => {
   router.push({
-    name: 'project',
-    params: {
+    path: '/project-details',
+    query: {
       id: props.id
     }
   })

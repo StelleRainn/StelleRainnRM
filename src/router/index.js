@@ -11,7 +11,7 @@ const router = createRouter({
     { path: '/rosa', component: () => import('@/views/rosa/Rosa.vue') },
     { path: '/reform-create', component: () => import('@/views/reformCreate/ReformCreate.vue') },
     { path: '/contact', component: () => import('@/views/contact/Contact.vue') },
-    { path: '/project-details/:id', name: 'project', component: () => import('@/components/ProjectDetails.vue') },
+    { path: '/project-details', component: () => import('@/components/ProjectDetails.vue') },
     {
       path: '/playground',
       component: () => import('@/views/playground/Index.vue'),

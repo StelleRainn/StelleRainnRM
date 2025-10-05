@@ -6,13 +6,13 @@ import GeneralHeader from './GeneralHeader.vue'
 const route = useRoute()
 
 onMounted(() => {
-  console.log(route.params)
+  console.log(route.query.id)
 })
 </script>
 
 <template>
   <GeneralHeader></GeneralHeader>
-  <div>{{ route.params.id }}</div>
+  <div>{{ route.query.id }}</div>
 </template>
 
 <style lang="scss" scoped></style>

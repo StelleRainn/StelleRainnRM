@@ -172,6 +172,13 @@
   },
   "active": "60dd470db4dca6ca",
   "lastOpenFiles": [
+    "src/assets/images/bookshelf.jpg",
+    "src/assets/images/Vue.js-removebg-preview.png",
+    "src/assets/images/vue-transparent.png",
+    "src/assets/images/vue-logo.svg",
+    "src/assets/images/Vue.js_Logo_2.svg",
+    "src/assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf",
+    "src/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf",
     "src/views/projects/Xtx.vue",
     "src/views/projects/WeRace.vue",
     "src/views/projects/ShoppingMall.vue",
@@ -180,19 +187,12 @@
     "src/views/projects/single/Bilibili.vue",
     "src/views/projects/single/WeRace.vue",
     "src/views/projects/single/Xtx.vue",
-    "src/views/playground/PlaygroundIndex.vue",
-    "src/views/playground/single/TryElAnchor2.vue",
-    "src/views/playground/single/TryElAnchor.vue",
     "src/assets/images/xiaoju-1.jpeg",
     "src/assets/images/8CEACD2B-1FA4-49BB-9EB8-BCCCFE4A796D_1_105_c.jpeg",
     "src/assets/images/swagii-1.jpeg",
     "src/assets/images/324B3425-3506-4FD2-8814-597ED62FE0EA_1_105_c.jpeg",
     "src/assets/images/forest-1.jpeg",
     "src/assets/images/1D594580-7447-4C6C-A530-7AC9C39FF97B_1_105_c.jpeg",
-    "src/assets/images/columbina-1.jpeg",
-    "src/assets/images/furina-1.jpeg",
-    "src/assets/images/miku-1.jpeg",
-    "src/assets/miku-1.jpeg",
     "dev_track/开发日志.md"
   ]
 }

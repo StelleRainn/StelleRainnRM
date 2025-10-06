@@ -172,6 +172,8 @@
   },
   "active": "60dd470db4dca6ca",
   "lastOpenFiles": [
+    "src/views/projects/Bookshelf.vue",
+    "src/components/ProjectDetails.vue",
     "src/assets/images/bookshelf.jpg",
     "src/assets/images/Vue.js-removebg-preview.png",
     "src/assets/images/vue-transparent.png",
@@ -182,7 +184,6 @@
     "src/views/projects/Xtx.vue",
     "src/views/projects/WeRace.vue",
     "src/views/projects/ShoppingMall.vue",
-    "src/views/projects/Bookshelf.vue",
     "src/views/projects/Bilibili.vue",
     "src/views/projects/single/Bilibili.vue",
     "src/views/projects/single/WeRace.vue",
@@ -192,7 +193,6 @@
     "src/assets/images/swagii-1.jpeg",
     "src/assets/images/324B3425-3506-4FD2-8814-597ED62FE0EA_1_105_c.jpeg",
     "src/assets/images/forest-1.jpeg",
-    "src/assets/images/1D594580-7447-4C6C-A530-7AC9C39FF97B_1_105_c.jpeg",
     "dev_track/开发日志.md"
   ]
 }

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <span>PlayGroungIndex</span>
+  <span>PlayGroundIndex</span>
   <RouterView></RouterView>
 </template>
 

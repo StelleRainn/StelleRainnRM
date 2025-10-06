@@ -4,15 +4,13 @@ import { ArrowRight } from '@element-plus/icons-vue'
 
 const props = defineProps({
   id: Number || String,
-  imgUrl: String
+  imgUrl: String,
+  routerName: String
 })
 
 const onVisit = () => {
   router.push({
-    path: '/project-details',
-    query: {
-      id: props.id
-    }
+    name: props.routerName
   })
 }
 </script>

@@ -1,83 +1,14 @@
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
-import { ArrowLeftBold, ArrowRightBold } from '@element-plus/icons-vue'
-
 import { ArrowDown } from '@element-plus/icons-vue'
+import { ref } from 'vue'
 
 import GeneralHeader from '@/components/GeneralHeader.vue'
+import GeneralGallery from '@/components/GeneralGallery.vue'
 
 import xiaoju1 from '@/assets/images/xiaoju-1.jpeg'
 import forest1 from '@/assets/images/forest-1.jpeg'
 import miku1 from '@/assets/images/miku-1.jpeg'
 import furina1 from '@/assets/images/furina-1.jpeg'
-
-// 画廊相关：ref、限位与节流状态 （Generate by TRAE AI）
-const galleryContainerRef = ref(null)
-const isAnimating = ref(false)
-const canPrev = ref(false)
-const canNext = ref(true)
-// 每次前进/后退的像素步长（可按需调整）
-const SCROLL_STEP = 320
-// 动画时长（毫秒）
-const ANIM_DURATION = 450
-
-const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
-
-const updateLimits = () => {
-  const el = galleryContainerRef.value
-  if (!el) return
-  const max = el.scrollWidth - el.clientWidth
-  const left = el.scrollLeft
-  canPrev.value = left > 0
-  canNext.value = left < max - 1 // 减1避免浮点误差导致按钮迟迟不禁用
-}
-
-const onGalleryScroll = () => {
-  updateLimits()
-}
-
-const scrollBySmooth = async (el, delta) => {
-  if (!el) return
-  const startLeft = el.scrollLeft
-  const max = el.scrollWidth - el.clientWidth
-  const target = Math.max(0, Math.min(startLeft + delta, max))
-  const distance = target - startLeft
-  if (distance === 0) return
-  isAnimating.value = true
-  const startTime = performance.now()
-
-  return new Promise((resolve) => {
-    const step = (now) => {
-      const elapsed = now - startTime
-      const t = Math.min(1, elapsed / ANIM_DURATION)
-      const eased = easeInOutCubic(t)
-      el.scrollLeft = startLeft + distance * eased
-      if (t < 1) {
-        requestAnimationFrame(step)
-      } else {
-        isAnimating.value = false
-        updateLimits()
-        resolve()
-      }
-    }
-    requestAnimationFrame(step)
-  })
-}
-
-const onPrev = async () => {
-  if (isAnimating.value || !canPrev.value) return
-  await scrollBySmooth(galleryContainerRef.value, -SCROLL_STEP)
-}
-
-const onNext = async () => {
-  if (isAnimating.value || !canNext.value) return
-  await scrollBySmooth(galleryContainerRef.value, SCROLL_STEP)
-}
-
-onMounted(async () => {
-  await nextTick()
-  updateLimits()
-})
 
 const highlights = ref([
   {
@@ -129,32 +60,9 @@ const featureListRef = ref(null)
       </div>
     </section>
     <section class="highlights">
-      <h1>重点一览</h1>
-      <div class="highlights-gallery" ref="galleryContainerRef" @scroll="onGalleryScroll">
-        <ul>
-          <li v-for="highlight in highlights" :key="highlight">
-            <img :src="highlight.imgUrl" alt="" />
-            <h3>{{ highlight.title }}</h3>
-            <p>{{ highlight.desc }}</p>
-          </li>
-        </ul>
-      </div>
-      <div class="gallery-control">
-        <el-button
-          circle
-          :icon="ArrowLeftBold"
-          size="large"
-          :disabled="!canPrev || isAnimating"
-          @click="onPrev"
-        ></el-button>
-        <el-button
-          circle
-          :icon="ArrowRightBold"
-          size="large"
-          :disabled="!canNext || isAnimating"
-          @click="onNext"
-        ></el-button>
-      </div>
+      <GeneralGallery :galleryItems="highlights">
+        <template #galleryTitle>重点一览</template>
+      </GeneralGallery>
     </section>
     <section class="framework">framework</section>
     <section class="persistence">persistence</section>
@@ -247,73 +155,6 @@ const featureListRef = ref(null)
       z-index: -1;
       background: linear-gradient(135deg, rgba(#000, 0.9), rgba(#111, 0.2));
     }
-  }
-}
-
-.highlights {
-  width: 100%;
-  height: fit-content; // 内容决定高度
-  padding: 10px 0 100px 48px;
-  margin-bottom: 10px;
-  position: relative;
-
-  h1 {
-    height: 170px;
-    line-height: 170px;
-    font-size: 60px;
-    letter-spacing: 0.8rem;
-    margin-bottom: 20px;
-    padding-left: 40px;
-  }
-
-  .highlights-gallery {
-    width: 100%;
-    height: fit-content;
-    overflow: scroll;
-
-    ul {
-      height: 100%;
-      width: 100%;
-      list-style: none;
-      display: grid;
-      grid-template-rows: 1fr;
-      grid-template-columns: repeat(5, 1fr);
-      column-gap: 20px;
-    }
-
-    ul > li {
-      width: 400px;
-      height: fit-content;
-      text-align: center;
-      padding: 0 10px;
-
-      img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 30px;
-        margin-bottom: 50px;
-      }
-
-      h3 {
-        font-size: 40px;
-        font-weight: normal;
-        margin-bottom: 15px;
-      }
-
-      p {
-        border-top: #636363 solid 0.5px;
-        font-size: 18px;
-        padding-top: 15px;
-      }
-    }
-  }
-
-  .gallery-control {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
   }
 }
 

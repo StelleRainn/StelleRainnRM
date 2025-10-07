@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+
 /* 添加平滑滚动效果 */
 html {
   scroll-behavior: smooth;

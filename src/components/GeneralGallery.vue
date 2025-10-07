@@ -3,7 +3,8 @@ import { ref, onMounted, nextTick } from 'vue'
 import { ArrowLeftBold, ArrowRightBold } from '@element-plus/icons-vue'
 
 // 画廊相关：ref、限位与节流状态
-// Generate by TRAE AI；理解状态：黑盒
+// Generate by TRAE AI；
+// 理解状态：黑盒
 const galleryContainerRef = ref(null)
 const isAnimating = ref(false)
 const canPrev = ref(false)
@@ -134,7 +135,7 @@ const props = defineProps({
   overflow: scroll;
 
   ul {
-    height: 100%;
+    height: fit-content;
     width: 100%;
     list-style: none;
     display: grid;

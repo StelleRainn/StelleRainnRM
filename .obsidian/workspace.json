@@ -172,6 +172,7 @@
   },
   "active": "60dd470db4dca6ca",
   "lastOpenFiles": [
+    "src/components/GeneralIntroduction.vue",
     "src/components/GeneralGallery.vue",
     "src/views/projects/Bookshelf.vue",
     "src/components/ProjectDetails.vue",
@@ -187,7 +188,6 @@
     "src/views/projects/ShoppingMall.vue",
     "src/views/projects/Bilibili.vue",
     "src/views/projects/single/Bilibili.vue",
-    "src/views/projects/single/WeRace.vue",
     "src/assets/images/xiaoju-1.jpeg",
     "src/assets/images/8CEACD2B-1FA4-49BB-9EB8-BCCCFE4A796D_1_105_c.jpeg",
     "src/assets/images/swagii-1.jpeg",

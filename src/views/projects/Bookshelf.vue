@@ -9,6 +9,7 @@ import xiaoju1 from '@/assets/images/xiaoju-1.jpeg'
 import forest1 from '@/assets/images/forest-1.jpeg'
 import miku1 from '@/assets/images/miku-1.jpeg'
 import furina1 from '@/assets/images/furina-1.jpeg'
+import GeneralIntroduction from '@/components/GeneralIntroduction.vue'
 
 const highlights = ref([
   {
@@ -42,7 +43,7 @@ const featureListRef = ref(null)
 <template>
   <GeneralHeader></GeneralHeader>
   <div class="main-container">
-    <section class="welcome">
+    <section id="welcome">
       <div class="background-layer"></div>
       <div class="content-layer">
         <div class="intro">
@@ -59,12 +60,14 @@ const featureListRef = ref(null)
         </div>
       </div>
     </section>
-    <section class="highlights">
+    <section id="highlights">
       <GeneralGallery :galleryItems="highlights">
         <template #galleryTitle>重点一览</template>
       </GeneralGallery>
     </section>
-    <section class="framework">framework</section>
+    <section class="framework">
+      <GeneralIntroduction></GeneralIntroduction>
+    </section>
     <section class="persistence">persistence</section>
     <section class="element-plus">element-plus</section>
     <section class="router-spa">router-spa</section>
@@ -81,7 +84,7 @@ const featureListRef = ref(null)
   background: #000 !important;
   color: #fff;
 }
-.welcome {
+#welcome {
   height: 100vh;
   width: 100%;
   position: relative;
@@ -157,6 +160,8 @@ const featureListRef = ref(null)
     }
   }
 }
+
+// highlights 及之后的内容不设置样式，由复用组件内部决定
 
 @keyframes scroll {
   to {

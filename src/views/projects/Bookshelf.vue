@@ -215,21 +215,15 @@ const introItemList = ref([
       </div>
     </section>
     <section id="highlights">
-      <GeneralGallery :galleryItems="highlights">
+      <GeneralGallery :galleryItems="highlights" textColor="#fff">
         <template #galleryTitle>重点一览</template>
       </GeneralGallery>
     </section>
     <div class="tech-introduction">
       <section v-for="introItem in introItemList" :key="introItem" :id="introItem.id">
-        <GeneralIntroduction :introItem="introItem"></GeneralIntroduction>
+        <GeneralIntroduction :introItem="introItem" themeSettings="DarkThemes1"></GeneralIntroduction>
       </section>
     </div>
-    <!-- <section class="persistence">persistence</section>
-    <section class="element-plus">element-plus</section>
-    <section class="router-spa">router-spa</section>
-    <section class="backend-interface">backend-interface</section>
-    <section class="git-deploy">git-deploy</section>
-    <section class="normalization">normalization</section> -->
   </div>
 </template>
 
@@ -238,13 +232,13 @@ const introItemList = ref([
   height: 100%;
   width: 100%;
   background: #000 !important;
-  color: #fff;
 }
 #welcome {
   height: 100vh;
   width: 100%;
   position: relative;
   margin-bottom: 10px;
+  color: #fff;
 
   .background-layer {
     position: absolute;

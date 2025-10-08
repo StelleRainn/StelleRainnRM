@@ -74,7 +74,8 @@ onMounted(async () => {
 
 // 至少包含 imgUrl、title、desc 三个字段
 const props = defineProps({
-  galleryItems: Array
+  galleryItems: Array,
+  textColor: String
 })
 </script>
 
@@ -118,6 +119,7 @@ const props = defineProps({
   padding: 10px 0 100px 48px;
   margin-bottom: 10px;
   position: relative;
+  color: v-bind(textColor);
 }
 
 .gallery-title {

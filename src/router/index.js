@@ -52,10 +52,10 @@ const router = createRouter({
     },
     {
       path: '/playground',
-      component: () => import('@/views/playground/PlaygroundIndex.vue'),
       children: [
         { path: 'try-elanchor', component: () => import('@/views/playground/single/TryElAnchor.vue') },
-        { path: 'try-elanchor2', component: () => import('@/views/playground/single/TryElAnchor2.vue') }
+        { path: 'try-elanchor2', component: () => import('@/views/playground/single/TryElAnchor2.vue') },
+        { path: 'chasing-rain-beta', component: () => import('@/views/playground/single/ChasingRainBeta.vue') }
       ]
     }
   ]

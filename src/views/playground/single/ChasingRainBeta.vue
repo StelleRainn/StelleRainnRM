@@ -253,6 +253,7 @@ const startJourney = () => {
 
 onMounted(() => {
   generateRainDrops()
+  console.log(rainDrops.value)
   window.addEventListener('scroll', handleScroll)
 
   // 初始动画
@@ -270,7 +271,8 @@ onUnmounted(() => {
 .chasing-rain-container {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+  /* background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%); */
+  background-color: #000;
   color: #ffffff;
   overflow-x: hidden;
 }

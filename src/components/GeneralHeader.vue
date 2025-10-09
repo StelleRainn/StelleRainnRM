@@ -45,7 +45,10 @@
                 <el-link :underline="false" href="/playground/try-elanchor2">锚点2</el-link>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-link :underline="false" href="/playground/chasing-rain-beta">逐雨</el-link>
+                <el-link :underline="false" href="/playground/chasing-rain-beta-1">逐雨</el-link>
+              </el-dropdown-item>
+              <el-dropdown-item>
+                <el-link :underline="false" href="/playground/chasing-rain-beta-2">逐雨之旅2</el-link>
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>

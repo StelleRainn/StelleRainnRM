@@ -55,7 +55,8 @@ const router = createRouter({
       children: [
         { path: 'try-elanchor', component: () => import('@/views/playground/single/TryElAnchor.vue') },
         { path: 'try-elanchor2', component: () => import('@/views/playground/single/TryElAnchor2.vue') },
-        { path: 'chasing-rain-beta', component: () => import('@/views/playground/single/ChasingRainBeta.vue') }
+        { path: 'chasing-rain-beta-1', component: () => import('@/views/playground/single/ChasingRainBeta1.vue') },
+        { path: 'chasing-rain-beta-2', component: () => import('@/views/playground/single/ChasingRainBeta2.vue') }
       ]
     }
   ]

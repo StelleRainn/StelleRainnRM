@@ -26,7 +26,7 @@ const handleScroll = () => {
   const scrollTop = window.pageYOffset
   const docHeight = document.documentElement.scrollHeight - window.innerHeight
   scrollProgress.value = (scrollTop / docHeight) * 100
-  
+
   // 检查滚动出现动画
   checkScrollAnimation()
 }
@@ -35,10 +35,10 @@ const handleScroll = () => {
 const observedElements = ref(new Set())
 const checkScrollAnimation = () => {
   const elements = document.querySelectorAll('.scroll-reveal')
-  elements.forEach(element => {
+  elements.forEach((element) => {
     const rect = element.getBoundingClientRect()
     const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0
-    
+
     if (isVisible && !observedElements.value.has(element)) {
       element.classList.add('revealed')
       observedElements.value.add(element)
@@ -171,32 +171,32 @@ onUnmounted(() => {
             <h2 class="genesis-title">{{ rainGenesisData.title }}</h2>
             <h3 class="genesis-subtitle">{{ rainGenesisData.subtitle }}</h3>
           </div>
-          
+
           <div class="genesis-content">
             <div class="genesis-main scroll-reveal">
-              <p 
-                v-for="(paragraph, index) in rainGenesisData.content" 
+              <p
+                v-for="(paragraph, index) in rainGenesisData.content"
                 :key="index"
                 class="genesis-paragraph scroll-reveal"
-                :style="{ animationDelay: (index * 0.2) + 's' }"
+                :style="{ animationDelay: index * 0.2 + 's' }"
               >
                 {{ paragraph }}
               </p>
             </div>
-            
+
             <div class="genesis-epilogue scroll-reveal">
               <div class="epilogue-divider"></div>
-              <p 
-                v-for="(line, index) in rainGenesisData.epilogue" 
+              <p
+                v-for="(line, index) in rainGenesisData.epilogue"
                 :key="index"
                 class="epilogue-line scroll-reveal"
-                :style="{ animationDelay: (index * 0.3 + 1) + 's' }"
+                :style="{ animationDelay: index * 0.3 + 1 + 's' }"
               >
                 {{ line }}
               </p>
               <div class="epilogue-divider"></div>
             </div>
-            
+
             <div class="genesis-closing scroll-reveal">
               <p class="closing-text">{{ rainGenesisData.closing }}</p>
             </div>
@@ -209,12 +209,12 @@ onUnmounted(() => {
         <div class="catalog-container">
           <h2 class="catalog-title scroll-reveal">章节目录</h2>
           <div class="chapters-scroll">
-            <div 
-              v-for="(chapter, index) in storyData.chapters" 
+            <div
+              v-for="(chapter, index) in storyData.chapters"
               :key="chapter.id"
               class="chapter-card scroll-reveal"
               :class="`chapter-${index + 1}`"
-              :style="{ animationDelay: (index * 0.1) + 's' }"
+              :style="{ animationDelay: index * 0.1 + 's' }"
             >
               <div class="chapter-number">{{ String(chapter.id).padStart(2, '0') }}</div>
               <h3 class="chapter-title">{{ chapter.title }}</h3>
@@ -227,22 +227,18 @@ onUnmounted(() => {
 
       <!-- 章节内容区域 -->
       <section class="stories-section">
-        <div 
-          v-for="chapter in storyData.chapters" 
-          :key="chapter.id"
-          class="story-chapter scroll-reveal"
-        >
+        <div v-for="chapter in storyData.chapters" :key="chapter.id" class="story-chapter scroll-reveal">
           <div class="chapter-header scroll-reveal">
             <span class="chapter-label">第{{ chapter.id }}章</span>
             <h2 class="story-title">{{ chapter.title }}</h2>
             <h3 class="story-subtitle">{{ chapter.subtitle }}</h3>
           </div>
           <div class="story-content">
-            <p 
-              v-for="(paragraph, index) in chapter.content" 
+            <p
+              v-for="(paragraph, index) in chapter.content"
               :key="index"
               class="story-paragraph scroll-reveal"
-              :style="{ animationDelay: (index * 0.2) + 's' }"
+              :style="{ animationDelay: index * 0.2 + 's' }"
             >
               {{ paragraph }}
             </p>
@@ -289,15 +285,15 @@ onUnmounted(() => {
 .progress-indicator {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 3px;
   height: 100vh;
   background: rgba(255, 255, 255, 0.1);
-  z-index: 1000;
+  z-index: 0;
 
   .progress-bar {
     width: 100%;
-    background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.6));
+    background: linear-gradient(135deg, #fd4d4d, #4dfdee);
     transition: height 0.1s ease;
   }
 }
@@ -307,7 +303,7 @@ onUnmounted(() => {
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  
+
   &.revealed {
     opacity: 1;
     transform: translateY(0);
@@ -332,8 +328,8 @@ onUnmounted(() => {
   .hero-content {
     .main-title {
       font-size: 8rem;
-      font-weight: 100;
-      letter-spacing: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 4rem;
       margin-bottom: 3rem;
       text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
       animation: titleGlow 4s ease-in-out infinite alternate;
@@ -350,11 +346,11 @@ onUnmounted(() => {
 }
 
 @keyframes titleGlow {
-  from { 
+  from {
     text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
     transform: scale(1);
   }
-  to { 
+  to {
     text-shadow: 0 0 50px rgba(255, 255, 255, 0.6);
     transform: scale(1.02);
   }
@@ -363,21 +359,16 @@ onUnmounted(() => {
 // 雨季形成板块
 .rain-genesis-section {
   padding: 8rem 0 10rem 0;
-  background: linear-gradient(180deg, 
-    rgba(0, 0, 0, 0.9) 0%, 
-    rgba(15, 25, 35, 0.8) 50%, 
-    rgba(0, 0, 0, 0.9) 100%
-  );
-  
+
   .genesis-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
-    
+
     .genesis-header {
       text-align: center;
       margin-bottom: 6rem;
-      
+
       .genesis-title {
         font-size: 4rem;
         font-weight: 200;
@@ -388,7 +379,7 @@ onUnmounted(() => {
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
-      
+
       .genesis-subtitle {
         font-size: 1.5rem;
         font-weight: 300;
@@ -397,11 +388,11 @@ onUnmounted(() => {
         margin: 0;
       }
     }
-    
+
     .genesis-content {
       .genesis-main {
         margin-bottom: 6rem;
-        
+
         .genesis-paragraph {
           font-size: 1.3rem;
           line-height: 2.4;
@@ -410,7 +401,7 @@ onUnmounted(() => {
           color: rgba(255, 255, 255, 0.9);
           text-align: justify;
           text-indent: 2em;
-          
+
           &:nth-child(3) {
             text-align: center;
             font-size: 1.5rem;
@@ -422,18 +413,18 @@ onUnmounted(() => {
           }
         }
       }
-      
+
       .genesis-epilogue {
         margin: 6rem 0;
         text-align: center;
-        
+
         .epilogue-divider {
           width: 100px;
           height: 1px;
           background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
           margin: 3rem auto;
         }
-        
+
         .epilogue-line {
           font-size: 1.2rem;
           font-weight: 300;
@@ -443,11 +434,11 @@ onUnmounted(() => {
           font-style: italic;
         }
       }
-      
+
       .genesis-closing {
         text-align: center;
         margin-top: 6rem;
-        
+
         .closing-text {
           font-size: 1.4rem;
           line-height: 2.2;
@@ -493,16 +484,16 @@ onUnmounted(() => {
       gap: 3rem;
       overflow-x: auto;
       padding: 3rem 0;
-      
+
       &::-webkit-scrollbar {
         height: 8px;
       }
-      
+
       &::-webkit-scrollbar-track {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 4px;
       }
-      
+
       &::-webkit-scrollbar-thumb {
         background: rgba(255, 255, 255, 0.3);
         border-radius: 4px;
@@ -517,13 +508,12 @@ onUnmounted(() => {
         padding: 2.5rem;
         backdrop-filter: blur(15px);
         cursor: pointer;
-        transition: all 0.4s ease;
+        transition: all 0.4s ease-in-out;
         position: relative;
         overflow: hidden;
 
         &:hover {
           background: rgba(255, 255, 255, 0.1);
-          transform: translateY(-15px);
           box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
         }
 
@@ -594,7 +584,7 @@ onUnmounted(() => {
 
   .story-chapter {
     max-width: 950px;
-    margin: 0 auto 12rem auto;
+    margin: 400px auto;
     padding: 0 2rem;
 
     .chapter-header {
@@ -647,7 +637,7 @@ onUnmounted(() => {
       font-size: 4rem;
       letter-spacing: 0.8rem;
     }
-    
+
     .slogan {
       font-size: 1.2rem;
       letter-spacing: 0.4rem;
@@ -656,25 +646,25 @@ onUnmounted(() => {
 
   .rain-genesis-section {
     padding: 6rem 0 8rem 0;
-    
+
     .genesis-container .genesis-header {
       .genesis-title {
         font-size: 2.5rem;
         letter-spacing: 0.5rem;
       }
-      
+
       .genesis-subtitle {
         font-size: 1.2rem;
         letter-spacing: 0.3rem;
       }
     }
-    
+
     .genesis-content {
       .genesis-paragraph {
         font-size: 1.1rem;
         line-height: 2.2;
       }
-      
+
       .closing-text {
         font-size: 1.2rem;
         padding: 2rem;
@@ -686,23 +676,23 @@ onUnmounted(() => {
     height: auto;
     min-height: 700px;
     padding: 6rem 0 8rem 0;
-    
+
     .catalog-container {
       .catalog-title {
         font-size: 2.5rem;
         letter-spacing: 0.5rem;
         margin-bottom: 3rem;
       }
-      
+
       .chapters-scroll {
         gap: 2rem;
         padding: 2rem 0;
-        
+
         .chapter-card {
           flex: 0 0 260px;
           aspect-ratio: 3/5;
           padding: 2rem;
-          
+
           .chapter-number {
             font-size: 4rem;
           }
@@ -713,20 +703,20 @@ onUnmounted(() => {
 
   .stories-section {
     padding: 6rem 0 8rem 0;
-    
+
     .story-chapter {
       margin-bottom: 8rem;
-      
+
       .chapter-header {
         margin-bottom: 4rem;
         padding-bottom: 2rem;
-        
+
         .story-title {
           font-size: 2rem;
           letter-spacing: 0.2rem;
         }
       }
-      
+
       .story-content .story-paragraph {
         font-size: 1.1rem;
         line-height: 2.2;

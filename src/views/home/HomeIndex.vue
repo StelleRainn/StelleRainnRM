@@ -7,7 +7,7 @@ import ResumeBanner from './components/ResumeBanner.vue'
 import PrimeBanner from './components/PrimeBanner.vue'
 import SubBanner from './components/SubBanner.vue'
 
-import { projectsList, subBannerList } from '@/staticData/StaticData'
+import { projectsList, subBannerList } from '@/staticData/home'
 
 const containerRef = ref(null)
 // 计算滚动偏移

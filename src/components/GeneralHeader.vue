@@ -7,7 +7,7 @@
       <li><el-link :underline="false" href="/resume">简历</el-link></li>
       <li>
         <el-dropdown>
-          <span class="el-dropdown-link"> 作品集 </span>
+          <span class="el-dropdown-link"> <el-link :underline="false" href="/collection">作品集</el-link> </span>
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item>

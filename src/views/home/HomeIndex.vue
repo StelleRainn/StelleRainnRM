@@ -1,18 +1,13 @@
 <script setup>
 import { ref, computed } from 'vue'
-import HeroBanner from '@/views/home/components/HeroBanner.vue'
-
 import { ArrowDown } from '@element-plus/icons-vue'
 
-// 导入图片
-import xiaoju1 from '@/assets/images/xiaoju-1.jpeg'
-import forest1 from '@/assets/images/forest-1.jpeg'
-import miku1 from '@/assets/images/miku-1.jpeg'
-import furina1 from '@/assets/images/furina-1.jpeg'
-
+import HeroBanner from '@/views/home/components/HeroBanner.vue'
 import ResumeBanner from './components/ResumeBanner.vue'
 import PrimeBanner from './components/PrimeBanner.vue'
 import SubBanner from './components/SubBanner.vue'
+
+import { projectsList, subBannerList } from '@/staticData/StaticData'
 
 const containerRef = ref(null)
 // 计算滚动偏移
@@ -20,14 +15,6 @@ const windowHeight = ref(window.innerHeight)
 const viewportOffset = computed(() => {
   return windowHeight.value * 0.5
 })
-
-const bgUrls = ref([xiaoju1, forest1, miku1, furina1])
-const subTitles = ref([
-  { mainTitle: '蔷薇', subTitle: '向一朵玫瑰起誓', bgUrl: xiaoju1 },
-  { mainTitle: '改创计划', subTitle: '崭新的黎明，近在咫尺', bgUrl: forest1 },
-  { mainTitle: '与我联系', subTitle: '你的意见，我听得见', bgUrl: miku1 },
-  { mainTitle: '试验场', subTitle: '探索网站背后所采用的原型技术', bgUrl: furina1 }
-])
 
 const handleClick = (e) => {
   e.preventDefault()
@@ -58,21 +45,18 @@ const handleClick = (e) => {
         <el-anchor-link href="#banner4">
           <el-icon size="50"><ArrowDown /></el-icon>
         </el-anchor-link>
-        <!-- <el-anchor-link href="#footer">
-          <el-icon size="50"><ArrowDown /></el-icon>
-        </el-anchor-link> -->
       </el-anchor>
     </div>
     <el-main class="home-container-main">
       <div class="anchor-ref" ref="containerRef">
         <section id="banner1" class="hero-banner">
           <!-- height 高度要和 hero-banner 一致 -->
-          <el-carousel height="750px" interval="5000" :pause-on-hover="false" arrow="never">
-            <el-carousel-item v-for="(bgUrl, index) in bgUrls" :key="index">
+          <el-carousel height="750px" :interval="5000" :pause-on-hover="false" arrow="never">
+            <el-carousel-item v-for="project in projectsList" :key="project.id">
               <!-- 父传子：背景图、板块id、标题组 -->
-              <HeroBanner :bgUrl="bgUrl" :artworkId="index">
-                <template #main-title>项目名称 - {{ index }}</template>
-                <template #sub-title>描述 - {{ index }}</template>
+              <HeroBanner :projectInfos="project">
+                <template #main-title>{{ project.name }}</template>
+                <template #sub-title>{{ project.desc }}</template>
               </HeroBanner>
             </el-carousel-item>
           </el-carousel>
@@ -84,7 +68,7 @@ const handleClick = (e) => {
           <PrimeBanner></PrimeBanner>
         </section>
         <section id="banner4" class="sub-banner">
-          <SubBanner v-for="(item, index) in subTitles" :key="index" :bgUrl="item.bgUrl">
+          <SubBanner v-for="(item, index) in subBannerList" :key="index" :bgUrl="item.bgUrl">
             <template #main-title>{{ item.mainTitle }}</template>
             <template #sub-title>{{ item.subTitle }}</template>
           </SubBanner>
@@ -176,6 +160,8 @@ const handleClick = (e) => {
 
   .home-footer {
     height: 100px;
+    line-height: 100px;
+    text-align: center;
     background-color: #f3f3f3;
     text-align: center;
   }

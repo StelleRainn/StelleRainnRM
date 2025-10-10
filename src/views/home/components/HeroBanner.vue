@@ -1,15 +1,17 @@
 <script setup>
+import router from '@/router'
+
 const props = defineProps({
-  bgUrl: String,
-  artworkId: Number
+  projectInfos: Object
 })
 
-const onGettingDetail = (artworkId) => {
-  console.log(props.artworkId, artworkId)
+const onGettingDetail = () => {
+  router.push({
+    name: props.projectInfos.routerName
+  })
 }
 
-const onExperienceOnline = (artworkId, e) => {
-  console.log(artworkId)
+const onExperienceOnline = (e) => {
   e.stopPropagation()
 }
 </script>
@@ -19,7 +21,10 @@ const onExperienceOnline = (artworkId, e) => {
   <!-- 动态设置背景 -->
   <div class="main-container">
     <!-- 背景层 -->
-    <div class="background-layer" :style="{ backgroundImage: props.bgUrl ? `url(${props.bgUrl})` : 'none' }"></div>
+    <div
+      class="background-layer"
+      :style="{ backgroundImage: props.projectInfos.bgUrl ? `url(${props.projectInfos.bgUrl})` : 'none' }"
+    ></div>
     <!-- 内容层 -->
     <div class="content-layer" @click="onGettingDetail(artworkId)">
       <h1>

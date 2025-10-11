@@ -51,7 +51,7 @@ const handleClick = (e) => {
       <div class="anchor-ref" ref="containerRef">
         <section id="banner1" class="hero-banner">
           <!-- height 高度要和 hero-banner 一致 -->
-          <el-carousel height="750px" :interval="5000" :pause-on-hover="false" arrow="never">
+          <el-carousel height="750px" :interval="5000" :pause-on-hover="true" arrow="hover">
             <el-carousel-item v-for="project in projectsList" :key="project.id">
               <!-- 父传子：背景图、板块id、标题组 -->
               <HeroBanner :projectInfos="project">
@@ -138,6 +138,15 @@ const handleClick = (e) => {
 
   .hero-banner {
     height: 750px;
+
+    :deep(ul.el-carousel__indicators.el-carousel__indicators--horizontal) {
+      bottom: 10px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 30px;
+      padding: 5px 20px 10px;
+      height: 32px;
+      backdrop-filter: blur(1px);
+    }
   }
 
   .resume-banner {
@@ -162,7 +171,7 @@ const handleClick = (e) => {
     height: 100px;
     line-height: 100px;
     text-align: center;
-    background-color: #f3f3f3;
+
     text-align: center;
   }
 }

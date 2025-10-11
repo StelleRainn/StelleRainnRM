@@ -61,9 +61,8 @@ const onExperienceOnline = (e) => {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
-    filter: blur(3px); // 背景层模糊
     transform: scale(1.1); // 稍微放大以避免模糊边缘
   }
 
@@ -74,8 +73,7 @@ const onExperienceOnline = (e) => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #f3f3f3;
-    letter-spacing: 0.4rem;
+    color: v-bind('props.projectInfos.textTheme');
 
     // 添加半透明背景以进一步增强可读性
     &::before {
@@ -85,14 +83,14 @@ const onExperienceOnline = (e) => {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.05);
       z-index: -1;
     }
 
     h1 {
-      margin-top: 170px;
+      margin-top: 130px;
       font-size: 50px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      letter-spacing: 0.4rem;
       animation: fadeUpIn 0.8s ease-out forwards;
       opacity: 0;
       transform: translateY(20px);
@@ -101,7 +99,7 @@ const onExperienceOnline = (e) => {
 
     h3 {
       margin-top: 10px;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+
       animation: fadeUpIn 0.8s ease-out forwards;
       opacity: 0;
       transform: translateY(20px);

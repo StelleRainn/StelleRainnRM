@@ -6,6 +6,8 @@ import miku1 from '@/assets/images/miku-1.jpeg'
 import furina1 from '@/assets/images/furina-1.jpeg'
 import bannerPic from '@/assets/images/createvue.png'
 
+import shoppingMallHeroBanner from '@/assets/images/shoppingMall/shoppingMall-hero-banner.png'
+
 export const highlights = ref([
   {
     imgUrl: xiaoju1,

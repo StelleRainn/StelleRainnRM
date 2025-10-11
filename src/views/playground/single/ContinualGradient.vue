@@ -24,6 +24,9 @@
   height: fit-content;
   background-color: cyan;
   width: 300px;
+
+  // 取消 overflow 可查看全部颜色
+  overflow: scroll;
 }
 
 ul {
@@ -31,7 +34,7 @@ ul {
   height: 300px;
   display: flex;
   flex-direction: row;
-  // animation: scrolling 3s linear infinite;
+  animation: scrolling 3s linear infinite;
 
   li {
     height: 300px;

@@ -47,6 +47,10 @@ onMounted(() => {
   <!-- Resume Banner 内部样式统一设置 100% 高度， 在外部使用组件时，指定具体高度 -->
   <div ref="containerRef" class="main-container">
     <div class="background-layer">
+      <!-- 流光体 -->
+      <ul>
+        <li v-for="value in 2" :key="value"></li>
+      </ul>
       <!-- 流光粒子效果 -->
       <div class="particle"></div>
       <div class="particle"></div>
@@ -87,30 +91,48 @@ onMounted(() => {
     height: 100%;
     overflow: hidden;
 
-    /* 基础渐变背景 - 深邃的夜空色调 */
-    background: repeating-linear-gradient(
-      to right,
-      #66d2ea,
-      #af66ea 10%,
-      #66d2ea 25%,
-      #66d2ea,
-      #af66ea 35%,
-      #66d2ea 50%
-    );
-    // background: repeating-linear-gradient(to right, #6673ea, #667eea 10%, #9f66ea 20%);
-    // 宽度 高度
-    background-size: 400% 100%;
-    // background-position-x: 33%;
-    animation: gradientFlow 5s linear infinite;
-  }
+    ul {
+      width: 400vw;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
 
-  //   #ea6699 40%,
-  // #ea666f 50%,
-  // #ea8966 60%,
-  // #e3ea66 70%,
-  // #8bea66 80%,
-  // #66ea7c 90%,
-  // #66eae1 100%
+      li {
+        height: 200%;
+        width: 200vw;
+        background: linear-gradient(
+          to right,
+          #75ffd6,
+          #75e6ff,
+          #759cff,
+          #a575ff,
+          #cf75ff,
+          #ff7593,
+          #ffbf75,
+          #ddff75,
+          #95ff75,
+          #75ffd6
+        );
+        animation: gradientFlow 16s linear infinite;
+      }
+    }
+
+    // /* 基础渐变背景 - 深邃的夜空色调 */
+    // background: repeating-linear-gradient(
+    //   to right,
+    //   #66d2ea,
+    //   #af66ea 10%,
+    //   #66d2ea 25%,
+    //   #66d2ea,
+    //   #af66ea 35%,
+    //   #66d2ea 50%
+    // );
+    // // background: repeating-linear-gradient(to right, #6673ea, #667eea 10%, #9f66ea 20%);
+    // // 宽度 高度
+    // background-size: 400% 100%;
+    // // background-position-x: 33%;
+    // animation: gradientFlow 5s linear infinite;
+  }
 
   /* 添加光点粒子效果 */
   .background-layer {
@@ -277,7 +299,8 @@ onMounted(() => {
 /* 渐变色彩流动动画 */
 @keyframes gradientFlow {
   to {
-    background-position: 33% 0;
+    // background-position: 33% 0;
+    transform: translateX(-200vw);
   }
 }
 

@@ -50,6 +50,9 @@
               <el-dropdown-item>
                 <el-link :underline="false" href="/playground/chasing-rain-beta-2">逐雨之旅2</el-link>
               </el-dropdown-item>
+              <el-dropdown-item>
+                <el-link :underline="false" href="/playground/continual-gradient">连续渐变</el-link>
+              </el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>

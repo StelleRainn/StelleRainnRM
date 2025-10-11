@@ -88,10 +88,29 @@ onMounted(() => {
     overflow: hidden;
 
     /* 基础渐变背景 - 深邃的夜空色调 */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-    background-size: 400% 400%;
-    animation: gradientFlow 8s ease-in-out infinite;
+    background: repeating-linear-gradient(
+      to right,
+      #66d2ea,
+      #af66ea 10%,
+      #66d2ea 25%,
+      #66d2ea,
+      #af66ea 35%,
+      #66d2ea 50%
+    );
+    // background: repeating-linear-gradient(to right, #6673ea, #667eea 10%, #9f66ea 20%);
+    // 宽度 高度
+    background-size: 400% 100%;
+    // background-position-x: 33%;
+    animation: gradientFlow 5s linear infinite;
   }
+
+  //   #ea6699 40%,
+  // #ea666f 50%,
+  // #ea8966 60%,
+  // #e3ea66 70%,
+  // #8bea66 80%,
+  // #66ea7c 90%,
+  // #66eae1 100%
 
   /* 添加光点粒子效果 */
   .background-layer {
@@ -257,14 +276,8 @@ onMounted(() => {
 
 /* 渐变色彩流动动画 */
 @keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  to {
+    background-position: 33% 0;
   }
 }
 

@@ -1,14 +1,13 @@
 import { ref } from 'vue'
 
-import bilibiliLogo from '@/assets/images/logos/bilibili-down.png'
-import rosaLogo from '@/assets/images/logos/rosa-down.png'
-import vantLogo from '@/assets/images/logos/vant-down.png'
-import weraceLogo from '@/assets/images/logos/u9-down.png'
-import xtxLogo from '@/assets/images/logos/xtx-down.png'
+import avatarImg from '@/assets/images/general/avatar-image.jpg'
+import bookshelfResmBg from '@/assets/images/bookshelf/bookshelfResmBg.png'
+import shoppingMallResmBg from '@/assets/images/shoppingMall/shoppingMallResmBg.png'
+import xtxResmBg from '@/assets/images/xtx/xtxResmBg.png'
+import weraceResmBg from '@/assets/images/werace/weraceResmBg.png'
+import bilibliResmBg from '@/assets/images/bilibili/bilibiliResmBg.png'
 
-import furina1 from '@/assets/images/furina-1.jpeg'
-
-export const avatar = furina1
+export const avatar = avatarImg
 
 export const skillsList = ref([
   { name: '主技术栈', contents: ['HTML5', 'CSS3', 'JavaScript(ES6+)', 'Vue.js 2 & 3 基础'] },
@@ -22,7 +21,8 @@ export const skillsList = ref([
 export const projectDetails = ref([
   {
     projectName: '蔷薇丛的小书架',
-    projectBgUrl: rosaLogo,
+    projectBgUrl: bookshelfResmBg,
+    shadowColor: '#7298be',
     projectDesc: [
       '基于Vue3 + TypeScript + Element Plus开发的在线图书管理系统，实现了图书的增删改查、分类管理、用户权限控制等核心功能',
       '采用前后端分离架构，前端使用Pinia进行状态管理，Axios封装HTTP请求，实现了响应式布局和组件化开发',
@@ -32,7 +32,8 @@ export const projectDetails = ref([
   },
   {
     projectName: '智慧商城',
-    projectBgUrl: vantLogo,
+    projectBgUrl: shoppingMallResmBg,
+    shadowColor: '#4dcaf7',
     projectDesc: [
       '基于微信小程序原生开发的电商平台，集成商品展示、购物车、订单管理、支付等完整电商流程',
       '使用Vant Weapp组件库构建用户界面，实现了商品搜索、分类筛选、收藏夹、地址管理等功能模块',
@@ -43,7 +44,8 @@ export const projectDetails = ref([
   },
   {
     projectName: '小兔鲜儿',
-    projectBgUrl: xtxLogo,
+    projectBgUrl: xtxResmBg,
+    shadowColor: '#ff7a95',
     projectDesc: [
       '基于Vue3 + Vite + Pinia开发的现代化电商前端项目，采用Composition API和TypeScript提升代码质量',
       '实现了商品详情页、购物车、结算流程、个人中心等核心电商功能，支持多规格商品选择和库存管理',
@@ -55,7 +57,8 @@ export const projectDetails = ref([
   },
   {
     projectName: 'WeRace',
-    projectBgUrl: weraceLogo,
+    projectBgUrl: weraceResmBg,
+    shadowColor: '#7d2848',
     projectDesc: [
       '基于React Native开发的跨平台运动社交APP，支持iOS和Android双端运行，实现了一套代码多端部署',
       '集成高德地图SDK实现GPS轨迹记录、实时定位、路线规划等功能，支持跑步、骑行、徒步等多种运动模式',
@@ -67,7 +70,8 @@ export const projectDetails = ref([
   },
   {
     projectName: 'B站首页复刻',
-    projectBgUrl: bilibiliLogo,
+    projectBgUrl: bilibliResmBg,
+    shadowColor: '#fc7498',
     projectDesc: [
       '使用原生HTML5 + CSS3 + JavaScript完整复刻哔哩哔哩网站首页，实现了像素级还原和交互效果',
       '采用Flex布局和Grid布局实现响应式设计，支持PC端、平板端、移动端多种屏幕尺寸适配',

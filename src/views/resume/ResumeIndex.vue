@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import GeneralHeader from '@/components/GeneralHeader.vue'
 import ProjectExpSingle from './components/ProjectExpSingle.vue'
 
@@ -62,7 +61,7 @@ import { avatar, skillsList, projectDetails } from '@/staticData/resume'
         <ProjectExpSingle
           class="projects-list-item"
           v-for="(projectDetail, index) in projectDetails"
-          :key="projectDetail.name"
+          :key="index"
           :projectDetail="projectDetail"
           :projectIndex="index"
         ></ProjectExpSingle>
@@ -98,7 +97,7 @@ import { avatar, skillsList, projectDetails } from '@/staticData/resume'
   .personal-info,
   .skills,
   .projects-experiences {
-    margin-bottom: 16px;
+    margin-bottom: 50px;
   }
 
   .personal-info {
@@ -107,7 +106,7 @@ import { avatar, skillsList, projectDetails } from '@/staticData/resume'
     padding: 40px 0;
     background-color: #fff;
     border-radius: 30px;
-    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
 
     .el-row,
     .el-col,
@@ -156,7 +155,7 @@ import { avatar, skillsList, projectDetails } from '@/staticData/resume'
     padding: 40px 0;
     background-color: #fff;
     border-radius: 30px;
-    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
 
     .el-row,
     .el-col,
@@ -214,7 +213,7 @@ import { avatar, skillsList, projectDetails } from '@/staticData/resume'
     height: fit-content;
     padding: 40px 0;
     border-radius: 30px;
-    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
 
     h1 {
@@ -230,26 +229,12 @@ import { avatar, skillsList, projectDetails } from '@/staticData/resume'
       display: flex;
       flex-direction: column;
 
-      // 原方案 - 背景与内容同位
-      // .projects-list-item {
-      //   height: fit-content;
-      //   width: 700px;
-      //   margin-bottom: 32px;
-
-      //   &:nth-child(odd) {
-      //   }
-
-      //   // 错位排开
-      //   &:nth-child(even) {
-      //     align-self: flex-end;
-      //   }
-      // }
-
       // 方案 2 - 背景与内容错位
       .projects-list-item {
         height: fit-content;
         width: 100%;
-        margin-bottom: 32px;
+        margin-bottom: 50px;
+        border-radius: 30px;
       }
     }
   }

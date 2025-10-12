@@ -40,6 +40,7 @@ const isLeft = computed(() => props.projectIndex % 2 === 0)
   display: flex;
 
   position: relative;
+  box-shadow: 0 0 20px v-bind('projectDetail.shadowColor');
 }
 
 // 背景层
@@ -48,14 +49,15 @@ const isLeft = computed(() => props.projectIndex % 2 === 0)
   top: 0;
   right: 0;
   height: 100%;
-  width: 1000px; // 根据最终图像决定是百分比(推荐：70%)还是定长（1000px）
+  width: 100%; // 根据最终图像决定是百分比(推荐：70%)还是定长（1000px）
   z-index: 0;
 
   // bgPosition和定位position的配合尚有瑕疵，考虑根据最终 素材 ，如要需要再做调整
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  // filter: blur(5px);
+
+  border-radius: 30px;
 }
 
 // 内容层 - “创造一块玻璃”
@@ -76,12 +78,14 @@ const isLeft = computed(() => props.projectIndex % 2 === 0)
   height: 100%;
   width: 700px;
   padding: 0 40px 40px 40px;
-  margin-bottom: 20px; // 让底部阴影完全显示
+
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   position: relative;
   z-index: 2;
 
-  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 30px;
 

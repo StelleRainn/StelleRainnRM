@@ -1,9 +1,9 @@
 import { ref } from 'vue'
 
-import xiaoju1 from '@/assets/images/xiaoju-1.jpeg'
-import forest1 from '@/assets/images/forest-1.jpeg'
-import miku1 from '@/assets/images/miku-1.jpeg'
-import furina1 from '@/assets/images/furina-1.jpeg'
+import rosaCover from '@/assets/images/general/rosa-cover.png'
+import dawnbreakCover from '@/assets/images/general/dawnbreak-cover.png'
+import contactCover from '@/assets/images/general/contact-cover.png'
+import playgroundCover from '@/assets/images/general/playground-cover.png'
 
 import shoppingMallHeroBanner from '@/assets/images/shoppingMall/shoppingMall-hero-banner-uw.png'
 import bookshelfHeroBanner from '@/assets/images/bookshelf/bookshelf-hero-banner-uw.png'
@@ -48,13 +48,9 @@ export const projectsList = ref([
   }
 ])
 
-// export projectsColorTheme = ref([
-
-// ])
-
 export const subBannerList = ref([
-  { mainTitle: '蔷薇', subTitle: '向一朵玫瑰起誓', bgUrl: xiaoju1 },
-  { mainTitle: '改创计划', subTitle: '崭新的黎明，近在咫尺', bgUrl: forest1 },
-  { mainTitle: '与我联系', subTitle: '你的意见，我听得见', bgUrl: miku1 },
-  { mainTitle: '试验场', subTitle: '探索网站背后所采用的原型技术', bgUrl: furina1 }
+  { mainTitle: '"蔷薇" - The IP', subTitle: '一如雨中蔷薇，在星光与水流之间，静静盛放。', bgUrl: rosaCover },
+  { mainTitle: '改创计划 S13: 破晓', subTitle: '"咫尺侵晨，所谓破晓，终将自由。"', bgUrl: dawnbreakCover },
+  { mainTitle: '与我联系', subTitle: '你的意见，我听得见', bgUrl: contactCover },
+  { mainTitle: '试验场', subTitle: '探索网站背后所采用的原型技术', bgUrl: playgroundCover }
 ])

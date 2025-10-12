@@ -84,13 +84,12 @@ const onMouseLeave = () => {
     height: 100%;
     z-index: 0;
 
-    filter: blur(1px);
     transition: all 0.3s ease-in-out;
   }
 
   .content-layer {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     height: 100%;
     color: #f3f3f3;
     display: flex;
@@ -103,9 +102,10 @@ const onMouseLeave = () => {
       flex-direction: column;
 
       .main-title {
-        font-size: 3rem;
-        letter-spacing: 0.5rem;
+        font-size: 40px;
+        letter-spacing: 0.3rem;
         margin: 0 0 10px 20px;
+        font-weight: bold;
       }
 
       .sub-title {
@@ -114,8 +114,9 @@ const onMouseLeave = () => {
       }
     }
 
-    .el-icon {
-      padding: 0 30px 30px 0;
+    :deep(.el-icon) {
+      // size 使用 API 设定而被固定，不要使用 padding，否则 border-box 内减会缩小实际尺寸，30px 会直接消失。
+      margin: 0 30px 30px 0;
       transition: all 0.3s ease-in-out;
     }
 
@@ -128,7 +129,13 @@ const onMouseLeave = () => {
       height: 100%;
       z-index: -1;
       // 黑色渐变遮罩
-      background: linear-gradient(to bottom, rgba(137, 137, 137, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(0, 0, 0, 0.2) 75%,
+        rgba(0, 0, 0, 0.4) 85%,
+        rgba(0, 0, 0, 0.9) 100%
+      );
     }
   }
 }

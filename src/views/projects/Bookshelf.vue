@@ -64,7 +64,7 @@ const featureListRef = ref(null)
     z-index: 0;
     width: 100%;
     height: 100%;
-    background: url('@/assets/images/bookshelf.jpg') no-repeat bottom right/cover;
+    background: url('@/assets/images/bookshelf/vueBg.jpg') no-repeat bottom right/cover;
   }
 
   .content-layer {

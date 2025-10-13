@@ -202,7 +202,7 @@ onUnmounted(() => {
     justify-content: center;
 
     li {
-      width: 130px;
+      width: 150px;
       margin: 0 5px;
       display: flex;
       flex-direction: column;
@@ -210,6 +210,8 @@ onUnmounted(() => {
       align-items: center;
 
       img {
+        object-fit: cover;
+        object-position: bottom;
         max-width: 90px;
         margin-bottom: 16px;
       }

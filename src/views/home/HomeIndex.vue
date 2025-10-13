@@ -9,6 +9,8 @@ import SubBanner from './components/SubBanner.vue'
 
 import { projectsList, subBannerList } from '@/staticData/home'
 
+const dialogVisible = ref(true)
+
 const containerRef = ref(null)
 // 计算滚动偏移
 const windowHeight = ref(window.innerHeight)
@@ -23,6 +25,37 @@ const handleClick = (e) => {
 
 <template>
   <el-container class="home-container">
+    <!-- 网站公告 -->
+    <el-dialog v-model="dialogVisible" title="内测预览须知 / 公告" width="1000" :before-close="handleClose">
+      <div style="margin-bottom: 10px">
+        本网站仍在积极开发迭代阶段，截止本公告，大部分数据并非最终呈现效果，信息亦不真实，不具备参考价值，仅为测试样式/排版使用。如需详细信息，请联系作者。
+      </div>
+      <hr style="margin-bottom: 10px" />
+      <h3 style="margin-bottom: 10px; font-size: 17px">参考信息：</h3>
+      <ul>
+        <li style="margin-bottom: 10px; font-size: 17px">2025年10月13日 下午 3:30</li>
+        <li style="margin-bottom: 10px">
+          <strong>首页 </strong>：
+          信息基本完备，部分项目、简历、逐雨之旅的交互跳转尚未实现，请使用头部导航条跳转。底部“蔷薇”“改创计划”“联系我”“开发试验场”暂未开发。
+        </li>
+        <li style="margin-bottom: 10px">
+          <strong>简历页 </strong>：
+          个人信息与技术栈信息可参考。项目经历内的各种表述不具备参考性，系AI生成用以测试排版。
+        </li>
+        <li style="margin-bottom: 10px">
+          <strong>作品集</strong>：
+          目前已开发“蔷薇丛的小书架”，“智慧商城”，其他未开发。“蔷薇丛的小书架”信息基本可用，“智慧商城”信息未更新，不具备参考性。
+        </li>
+        <li style="margin-bottom: 10px"><strong>逐雨之旅</strong>：动效基本选定，故事内容不具备参考意义。</li>
+        <li style="margin-bottom: 10px"><strong>开发试验场</strong>：可以正常测试。</li>
+      </ul>
+      <template #footer>
+        <div class="dialog-footer">
+          <el-button type="primary" @click="dialogVisible = false"> 好的 </el-button>
+        </div>
+      </template>
+    </el-dialog>
+
     <div class="home-container-aside">
       <!-- 自定义滚动容器需要添加offset和e.preventDefault -->
       <el-anchor

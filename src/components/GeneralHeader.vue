@@ -1,57 +1,67 @@
-<script setup></script>
+<script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const navigateTo = (path) => {
+  router.push(path)
+}
+</script>
 
 <template>
   <header>
     <ul>
-      <li><el-link :underline="false" href="/">首页</el-link></li>
-      <li><el-link :underline="false" href="/resume">简历</el-link></li>
+      <li><el-link :underline="false" @click="navigateTo('/')">首页</el-link></li>
+      <li><el-link :underline="false" @click="navigateTo('/resume')">简历</el-link></li>
       <li>
         <el-dropdown>
-          <span class="el-dropdown-link"> <el-link :underline="false" href="/collection">作品集</el-link> </span>
+          <span class="el-dropdown-link">
+            <el-link :underline="false" @click="navigateTo('/collection')">作品集</el-link>
+          </span>
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item>
-                <el-link :underline="false" href="/project/bookshelf">蔷薇丛的小书架</el-link>
+                <el-link :underline="false" @click="navigateTo('/project/bookshelf')">蔷薇丛的小书架</el-link>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-link :underline="false" href="/project/shopping-mall">智慧商城</el-link>
+                <el-link :underline="false" @click="navigateTo('/project/shopping-mall')">智慧商城</el-link>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-link :underline="false" href="/project/xtx">小兔鲜儿</el-link>
+                <el-link :underline="false" @click="navigateTo('/project/xtx')">小兔鲜儿</el-link>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-link :underline="false" href="/project/werace">WeRace</el-link>
+                <el-link :underline="false" @click="navigateTo('/project/werace')">WeRace</el-link>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-link :underline="false" href="/project/bilibili">B站首页复刻</el-link>
+                <el-link :underline="false" @click="navigateTo('/project/bilibili')">B站首页复刻</el-link>
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>
       </li>
-      <li><el-link :underline="false" href="/chasing-rain">逐雨之旅</el-link><span></span></li>
-      <li><el-link :underline="false" href="/rosa">蔷薇</el-link></li>
-      <li><el-link :underline="false" href="/reform-create">改创计划</el-link></li>
-      <li><el-link :underline="false" href="/contact">联系我</el-link></li>
+      <li><el-link :underline="false" @click="navigateTo('/chasing-rain')">逐雨之旅</el-link><span></span></li>
+      <li><el-link :underline="false" @click="navigateTo('/rosa')">蔷薇</el-link></li>
+      <li><el-link :underline="false" @click="navigateTo('/reform-create')">改创计划</el-link></li>
+      <li><el-link :underline="false" @click="navigateTo('/contact')">联系我</el-link></li>
       <li>
         <el-dropdown>
           <span class="el-dropdown-link"> 开发试验场 </span>
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item>
-                <el-link :underline="false" href="/playground/try-elanchor1">锚点</el-link>
+                <el-link :underline="false" @click="navigateTo('/playground/try-elanchor1')">锚点</el-link>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-link :underline="false" href="/playground/try-elanchor2">锚点2</el-link>
+                <el-link :underline="false" @click="navigateTo('/playground/try-elanchor2')">锚点2</el-link>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-link :underline="false" href="/playground/chasing-rain-beta-1">逐雨</el-link>
+                <el-link :underline="false" @click="navigateTo('/playground/chasing-rain-beta-1')">逐雨</el-link>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-link :underline="false" href="/playground/chasing-rain-beta-2">逐雨之旅2</el-link>
+                <el-link :underline="false" @click="navigateTo('/playground/chasing-rain-beta-2')">逐雨之旅2</el-link>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-link :underline="false" href="/playground/continual-gradient">连续渐变</el-link>
+                <el-link :underline="false" @click="navigateTo('/playground/continual-gradient')">连续渐变</el-link>
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>

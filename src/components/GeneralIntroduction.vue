@@ -95,7 +95,7 @@ onMounted(() => {
   text-align: center;
 
   img {
-    width: 800px;
+    width: 1000px;
     object-fit: cover;
     object-position: center;
     margin-bottom: 20px;

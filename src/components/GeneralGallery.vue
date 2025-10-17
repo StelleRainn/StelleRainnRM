@@ -142,7 +142,7 @@ const props = defineProps({
     list-style: none;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     column-gap: 20px;
   }
 

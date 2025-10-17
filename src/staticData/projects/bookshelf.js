@@ -1,41 +1,21 @@
 import { ref } from 'vue'
 
-import bannerPic from '@/assets/images/bookshelf/createvue.png'
+import pnpmdev from '@/assets/images/bookshelf/pnpmdev.png'
+import elAutoImport from '@/assets/images/bookshelf/el-auto-import.png'
 import vue3LogoPure1 from '@/assets/images/bookshelf/vue3LogoPure1.png'
 import elPlusLogoPure1 from '@/assets/images/bookshelf/elPlusLogoPure1.png'
 import piniaLogoPure1 from '@/assets/images/bookshelf/piniaLogoPure1.png'
 import vuerouter4PureLogoPure1 from '@/assets/images/bookshelf/vuerouter4LogoPure1.png'
 import gitLogoPure1 from '@/assets/images/bookshelf/gitLogoPure1.png'
 import piniaPersist from '@/assets/images/bookshelf/piniaPersist.png'
+import vercelDepolyment from '@/assets/images/bookshelf/vercel-deployment.png'
+import axiosInterceptors from '@/assets/images/bookshelf/axios-interceptors.png'
 import elPlus from '@/assets/images/bookshelf/elPlus.png'
+import vueQuill from '@/assets/images/bookshelf/vue-quill.png'
 import vueRouter4Code from '@/assets/images/bookshelf/vueRouter4Code.png'
 import api from '@/assets/images/bookshelf/api.png'
 import gitLog from '@/assets/images/bookshelf/gitLog.png'
 import eslint from '@/assets/images/bookshelf/eslint.png'
-
-export const highlights = ref([
-  {
-    imgUrl: vue3LogoPure1,
-    title: 'Vue3框架',
-    desc: '基于Vue3框架打造。广泛应用了 Vue3 基础知识点。组合式API使代码编写更加灵活'
-  },
-  {
-    imgUrl: elPlusLogoPure1,
-    title: 'Element Plus',
-    desc: '灵活强大的组件库'
-  },
-  {
-    imgUrl: piniaLogoPure1,
-    title: 'Pinia持久化',
-    desc: '使用Pinia完成时持久化管理。'
-  },
-  {
-    imgUrl: vuerouter4PureLogoPure1,
-    title: 'Vue Router 4',
-    desc: 'SPA开发。在Vue Router加持下，页面开发更符合思维逻辑习惯'
-  },
-  { imgUrl: gitLogoPure1, title: '工程管理', desc: '完备的 Git 体系' }
-])
 
 // 数组末尾填充冗余数据，动画循环时“以假乱真”
 export const featureList = ref([
@@ -45,158 +25,231 @@ export const featureList = ref([
   'Element Plus',
   'Pinia',
   'Axios',
+  'Git',
+  'Husky',
+  'Vue Quill',
+  'EsLint',
   'Composition API',
   'Vue Router'
 ])
 
-// 技术点介绍
-export const introItemList = ref([
+export const highlights = ref([
   {
-    id: 'framework',
-    label: 'Vue.js 3',
-    slogan: '渐进式框架 <br /> 快速上手，超高效率',
-    desc: `项目使用 <strong>Vue.js 3</strong> 作为主要开发框架，相比 Vue 2，Vue 3 提供了许多方便的新特性，例如<strong
-        >组合式 API</strong
-      >、<strong>内置语法糖</strong>、<strong>更高效的响应式系统</strong>，极大提高了项目的开发效率和灵活性。借助
-      <strong>Vite</strong> 这一新一代构建工具，冷启动速度提升
-      <strong>10 倍以上</strong>，热更新更是毫秒级响应，彻底告别“改一行等半天”的痛点。
-      <strong>Pinia</strong> 作为官方推荐状态管理库，轻量、直观且完全支持 TypeScript，彻底摒弃了 mutations
-      的冗余概念。再加上
-      <strong>Vue Router 4</strong>
-      的动态路由、路由级代码分割与导航守卫增强，整个技术栈在<strong>性能、可维护性与开发体验</strong>三个维度全面跃升，为复杂单页应用（SPA）与渐进式
-      Web 应用提供了坚实底座。`,
-    bannerPicUrl: bannerPic,
-    bannerPicFootage: '* 在 Terminal 使用使用简单的命令即可快速搭建一个功能完备的 Vue App',
-    emphasizeList: [
-      {
-        emTitle: '快速搭建',
-        emDesc: `使用使用简单的命令即可快速搭建一个功能完备的。<strong>内置 dev, build, lint脚本`
-      },
-      { emTitle: '响应式数据', emDesc: `通过 ref 引用标识符轻松创建响应式数据，使用插值表达式即可在模板中使用` },
-      { emTitle: '快速搭建', emDesc: `使用使用简单的命令即可快速搭建一个功能完备的。<strong>内置 dev, build, lint脚本` }
-    ]
+    imgUrl: vue3LogoPure1,
+    title: 'Vue3 组合式API',
+    desc: '全面采用Vue3组合式API开发，代码逻辑更清晰，复用性更强，开发效率显著提升'
   },
   {
-    id: 'persistence',
-    label: 'Pinia 持久化',
-    slogan: '状态长存，<br /> 数据无界。',
-    desc: `Pinia 持久化，重塑状态管理新境界。精心设计的 <strong>Pinia Plugin Persistedstate</strong>，以极简的方式将状态无缝存储至 <strong>LocalStorage</strong> 或 <strong>SessionStorage</strong>，确保页面刷新后数据依然稳如磐石。无论是用户偏好、复杂表单，还是动态购物车，<strong>一键持久化</strong> 让数据管理轻盈优雅。配合 Pinia 的直观 API 和 TypeScript 支持，开发体验如丝般顺滑，效率与可靠性并驾齐驱，成就无懈可击的前端体验。`,
-    bannerPicUrl: piniaPersist,
-    bannerPicFootage: '* 一行代码，状态永存，数据管理从未如此从容。',
+    imgUrl: elPlusLogoPure1,
+    title: 'Element Plus UI',
+    desc: '基于Element Plus构建现代化管理界面，组件丰富，交互流畅，用户体验优秀'
+  },
+  {
+    imgUrl: piniaLogoPure1,
+    title: 'Pinia状态管理',
+    desc: '使用Pinia实现状态持久化管理，数据流清晰，支持用户登录状态保持'
+  },
+  {
+    imgUrl: vuerouter4PureLogoPure1,
+    title: 'SPA单页应用',
+    desc: '基于Vue Router 4构建SPA应用，路由导航守卫保护，页面切换流畅无刷新'
+  },
+  {
+    imgUrl: gitLogoPure1,
+    title: '完整CRUD功能',
+    desc: '实现文章管理、分类管理、用户管理等完整业务功能，涵盖增删改查操作'
+  },
+  {
+    imgUrl: vue3LogoPure1,
+    title: '富文本编辑器',
+    desc: '集成Vue Quill富文本编辑器，支持图片上传，为内容创作提供专业工具'
+  },
+  {
+    imgUrl: elPlusLogoPure1,
+    title: 'HTTP请求封装',
+    desc: '基于Axios封装完整请求库，统一错误处理，支持token自动管理'
+  },
+  {
+    imgUrl: gitLogoPure1,
+    title: '工程化规范',
+    desc: '集成ESLint、Prettier、Husky等工具，确保代码质量和团队协作规范'
+  }
+])
+
+export const introItemList = ref([
+  {
+    id: 'vue3-framework',
+    label: 'Vue.js 3',
+    slogan: '组合式API <br /> 现代化开发体验',
+    desc: `项目基于 <strong>Vue.js 3</strong> 构建，充分利用了组合式API的优势。相比Vue 2的选项式API，<strong>组合式API</strong>让逻辑复用更加灵活，代码组织更加清晰。项目中广泛使用了 <strong>ref</strong>、<strong>reactive</strong> 等响应式API，以及 <strong>computed</strong>、<strong>watch</strong> 等组合函数，实现了高效的数据管理。结合 <strong>Vite</strong> 构建工具，开发服务器启动速度极快，热更新响应迅速，大幅提升了开发体验。`,
+    bannerPicUrl: pnpmdev,
+    bannerPicFootage: '* 使用 pnpm dev 命令即可快速启动开发服务器，速度相比 WebPack 更是飞跃',
     emphasizeList: [
       {
-        emTitle: '无缝存储',
-        emDesc: `<strong>LocalStorage</strong> 和 <strong>SessionStorage</strong> 双剑合璧，数据存储稳若磐石，刷新无忧。`
+        emTitle: '组合式API',
+        emDesc: `使用 <strong>setup</strong> 语法糖，代码更简洁，逻辑更清晰，便于维护和测试`
       },
       {
-        emTitle: '灵活掌控',
-        emDesc: `自定义存储策略，适配 <strong>复杂业务场景</strong>，游刃有余应对多样需求。`
+        emTitle: '响应式系统',
+        emDesc: `通过 <strong>ref</strong> 和 <strong>reactive</strong> 创建响应式数据，自动追踪依赖变化`
       },
       {
-        emTitle: '极致轻盈',
-        emDesc: `Pinia 插件设计精巧，<strong>零性能负担</strong>，为开发者带来优雅体验。`
+        emTitle: 'Vite构建',
+        emDesc: `基于 <strong>Vite</strong> 的极速构建，开发服务器秒级启动，热更新毫秒响应`
       }
     ]
   },
   {
     id: 'element-plus',
-    label: 'ElementPlus 组件库',
-    slogan: '美感天成，<br /> 效率非凡。',
-    desc: `ElementPlus 组件库，重新定义前端美学与效率。每一个组件都精心雕琢，<strong>开箱即用</strong>，从基础按钮到复杂数据表格，皆以极致流畅的体验满足多样化需求。支持 <strong>按需加载</strong> 和 <strong>动态主题</strong>，让品牌化界面设计如行云流水。内置 <strong>国际化支持</strong>，助力应用轻松迈向全球舞台。ElementPlus 以优雅的设计语言和强大的功能矩阵，为开发者打造无与伦比的创作自由。`,
-    bannerPicUrl: elPlus,
-    bannerPicFootage: '* 从表单到弹窗，ElementPlus 赋予界面设计无限可能。',
+    label: 'Element Plus',
+    slogan: '企业级UI组件库 <br /> 开箱即用',
+    desc: `采用 <strong>Element Plus</strong> 作为UI组件库，为项目提供了丰富的企业级组件。通过 <strong>unplugin-auto-import</strong> 和 <strong>unplugin-vue-components</strong> 实现了组件的按需自动导入，既保证了开发效率，又优化了打包体积。项目中使用了表格、表单、弹窗、抽屉等多种组件，构建了完整的后台管理界面。支持 <strong>中文国际化</strong>，提供了良好的用户体验。`,
+    bannerPicUrl: elAutoImport,
+    bannerPicFootage: '* 自动导入配置让组件使用更加便捷',
     emphasizeList: [
       {
-        emTitle: '组件矩阵',
-        emDesc: `涵盖 <strong>表单、表格、弹窗</strong> 等丰富场景，快速构建现代化界面。`
+        emTitle: '丰富组件',
+        emDesc: `包含 <strong>表格、表单、弹窗</strong> 等60+组件，满足各种业务场景需求`
       },
       {
-        emTitle: '主题自由',
-        emDesc: `支持 <strong>动态换肤</strong> 和 CSS 变量，品牌风格一键呈现。`
+        emTitle: '按需导入',
+        emDesc: `通过插件实现 <strong>自动按需导入</strong>，减少打包体积，提升性能`
+      },
+      {
+        emTitle: '主题定制',
+        emDesc: `支持 <strong>SCSS变量</strong> 定制主题，轻松适配品牌色彩方案`
       }
     ]
   },
   {
-    id: 'vue-router-spa',
-    label: 'Vue 路由与 SPA 开发',
-    slogan: '导航无痕，<br /> 体验超然。',
-    desc: `Vue Router 4，为单页应用（SPA）注入非凡活力。凭借 <strong>动态路由</strong> 和 <strong>懒加载</strong> 技术，页面切换快如闪电，首屏加载速度提升 <strong>50%以上</strong>。支持 <strong>嵌套路由</strong> 和 <strong>导航守卫</strong>，轻松实现权限管理与流畅过渡动画。结合 Vite 的 <strong>代码分割</strong>，性能与可维护性双双突破天际。Vue Router 4 以极致简洁的逻辑，赋予开发者打造丝滑 SPA 体验的无限可能。`,
+    id: 'pinia-store',
+    label: 'Pinia 状态管理',
+    slogan: '轻量状态管理 <br /> 数据持久化',
+    desc: `使用 <strong>Pinia</strong> 作为状态管理库，相比Vuex更加轻量和直观。项目中实现了用户信息的状态管理，包括 <strong>token管理</strong>、<strong>用户信息存储</strong> 等功能。通过 <strong>pinia-plugin-persistedstate</strong> 插件实现了状态持久化，用户刷新页面后登录状态依然保持。采用组合式API风格，状态管理代码更加清晰易懂。`,
+    bannerPicUrl: piniaPersist,
+    bannerPicFootage: '* 状态持久化确保用户体验的连续性',
+    emphasizeList: [
+      {
+        emTitle: '轻量设计',
+        emDesc: `相比Vuex更加 <strong>轻量简洁</strong>，没有mutations概念，直接修改state`
+      },
+      {
+        emTitle: '持久化存储',
+        emDesc: `集成 <strong>persistedstate插件</strong>，自动将状态保存到localStorage`
+      },
+      {
+        emTitle: 'TypeScript支持',
+        emDesc: `原生支持 <strong>TypeScript</strong>，提供完整的类型推导和检查`
+      }
+    ]
+  },
+  {
+    id: 'vue-router',
+    label: 'Vue Router 4',
+    slogan: '单页应用路由 <br /> 导航守卫保护',
+    desc: `基于 <strong>Vue Router 4</strong> 构建单页应用，实现了完整的路由系统。项目采用 <strong>嵌套路由</strong> 结构，主布局包含侧边栏导航，子路由渲染具体页面内容。通过 <strong>路由懒加载</strong> 优化首屏加载性能，使用 <strong>导航守卫</strong> 实现登录状态检查，未登录用户自动跳转到登录页面。支持 <strong>History模式</strong>，URL更加美观。`,
     bannerPicUrl: vueRouter4Code,
-    bannerPicFootage: '* 动态路由与懒加载，铸就极速单页应用体验。',
+    bannerPicFootage: '* 导航守卫确保应用安全性',
     emphasizeList: [
       {
-        emTitle: '极速导航',
-        emDesc: `<strong>懒加载</strong> 与代码分割，首屏性能提升至全新高度。`
+        emTitle: '嵌套路由',
+        emDesc: `采用 <strong>嵌套路由</strong> 结构，布局组件与页面组件分离，结构清晰`
       },
       {
-        emTitle: '智能守卫',
-        emDesc: `<strong>导航守卫</strong> 确保权限控制与页面过渡优雅自如。`
+        emTitle: '懒加载',
+        emDesc: `路由组件 <strong>按需加载</strong>，减少首屏加载时间，提升用户体验`
       },
       {
-        emTitle: '灵活路由',
-        emDesc: `支持 <strong>动态与嵌套路由</strong>，复杂页面逻辑一手掌控。`
+        emTitle: '导航守卫',
+        emDesc: `实现 <strong>全局前置守卫</strong>，自动检查登录状态，保护私有路由`
       }
     ]
   },
   {
-    id: 'backend-interface',
-    label: '真实后端接口',
-    slogan: '连接无间，<br /> 数据流转。',
-    desc: `后端接口对接，从未如此精准高效。基于 <strong>OpenAPI/Swagger</strong> 规范，接口文档清晰如镜，<strong>自动生成</strong> TypeScript 类型定义，彻底告别手动维护的繁琐。支持 <strong>RESTful API</strong> 和 <strong>GraphQL</strong>，适配多样业务场景。结合 <strong>Axios</strong> 的流畅请求处理与 <strong>Mock 数据</strong> 功能，前后端并行开发效率翻倍，开发节奏快如疾风，为项目交付注入无限动能。`,
-    bannerPicUrl: api,
-    bannerPicFootage: '* 规范文档与 Mock 数据，助力前后端无缝协作。',
+    id: 'business-features',
+    label: '完整业务功能',
+    slogan: '文章管理系统 <br /> CRUD操作完备',
+    desc: `项目实现了完整的文章管理系统功能，包括 <strong>文章管理</strong>、<strong>分类管理</strong>、<strong>用户管理</strong> 等核心模块。支持文章的增删改查操作，提供了 <strong>分页查询</strong>、<strong>条件筛选</strong>、<strong>状态管理</strong> 等实用功能。集成了 <strong>Vue Quill</strong> 富文本编辑器，支持图片上传和富文本内容编辑。用户管理模块包含个人信息修改、头像上传、密码重置等功能。`,
+    bannerPicUrl: vueQuill,
+    bannerPicFootage: '* 富文本编辑器提供专业的内容创作体验',
     emphasizeList: [
       {
-        emTitle: '规范定义',
-        emDesc: `<strong>OpenAPI</strong> 驱动接口文档，类型自动生成，开发更精准。`
+        emTitle: '文章管理',
+        emDesc: `完整的 <strong>CRUD操作</strong>，支持分页、筛选、状态管理等功能`
       },
       {
-        emTitle: '并行开发',
-        emDesc: `<strong>Mock 数据</strong> 解放前端，告别等待后端接口的瓶颈。`
+        emTitle: '富文本编辑',
+        emDesc: `集成 <strong>Vue Quill</strong> 编辑器，支持图片上传和格式化文本`
+      },
+      {
+        emTitle: '用户系统',
+        emDesc: `包含 <strong>登录认证</strong>、个人信息管理、头像上传等完整功能`
+      }
+    ]
+  },
+  {
+    id: 'http-axios',
+    label: 'HTTP请求封装',
+    slogan: 'Axios拦截器 <br /> 统一请求管理',
+    desc: `基于 <strong>Axios</strong> 封装了完整的HTTP请求库，实现了请求和响应拦截器。请求拦截器自动添加 <strong>Authorization</strong> 头部，响应拦截器统一处理错误和401状态码。通过统一的错误处理机制，提升了用户体验和代码的可维护性。接口设计遵循 <strong>RESTful</strong> 规范，支持灵活的环境配置，代码结构清晰易维护。`,
+    bannerPicUrl: axiosInterceptors,
+    bannerPicFootage: '* 请求拦截器自动处理token认证',
+    emphasizeList: [
+      {
+        emTitle: '拦截器设计',
+        emDesc: `实现 <strong>请求/响应拦截器</strong>，自动处理token和错误状态`
+      },
+      {
+        emTitle: '统一错误处理',
+        emDesc: `集中处理 <strong>HTTP错误</strong> 和业务异常，提升用户体验`
+      },
+      {
+        emTitle: 'RESTful API',
+        emDesc: `遵循 <strong>RESTful</strong> 设计规范，接口语义清晰，易于理解`
       }
     ]
   },
   {
     id: 'engineering',
-    label: '工程化',
-    slogan: '部署如风，<br /> 协作无界。',
-    desc: `工程化体系，重新定义团队协作与上线效率。依托 <strong>Git</strong> 的版本控制，提交规范清晰如水，<strong>Husky</strong> 自动校验确保每行代码无可挑剔。结合 <strong>GitHub Actions</strong> 和 <strong>Vercel</strong>，实现 <strong>CI/CD 自动化部署</strong>，从代码推送至上线仅需数分钟。支持 <strong>多环境配置</strong>，开发、测试、生产环境切换如行云流水。工程化让项目管理优雅高效，团队协作如同一场完美的交响乐。`,
+    label: '工程化配置',
+    slogan: '代码规范 <br /> 自动化流程',
+    desc: `项目采用了完整的前端工程化配置，使用 <strong>ESLint</strong> 进行代码质量检查，<strong>Prettier</strong> 统一代码格式。通过 <strong>Husky</strong> 配置Git钩子，在提交前自动执行代码检查。使用 <strong>lint-staged</strong> 只对暂存区文件进行检查，提高效率。配置了 <strong>EditorConfig</strong> 统一编辑器设置，确保团队开发的一致性。支持 <strong>PNPM</strong> 包管理，提升依赖安装速度。`,
     bannerPicUrl: gitLog,
-    bannerPicFootage: '* 自动化部署与规范提交，项目上线从未如此轻松。',
+    bannerPicFootage: '* 迭代开发',
     emphasizeList: [
       {
-        emTitle: '自动化部署',
-        emDesc: `<strong>GitHub Actions</strong> 与 <strong>Vercel</strong>，一键上线，效率拉满。`
+        emTitle: '代码规范',
+        emDesc: `<strong>ESLint + Prettier</strong> 确保代码风格统一，提高代码质量`
       },
       {
-        emTitle: '规范管理',
-        emDesc: `<strong>Husky</strong> 确保提交信息清晰，代码历史整洁如新。`
+        emTitle: 'Git钩子',
+        emDesc: `<strong>Husky</strong> 配置pre-commit钩子，提交前自动检查代码`
       },
       {
-        emTitle: '多环境适配',
-        emDesc: `无缝切换 <strong>开发、测试、生产</strong> 环境，灵活应对复杂需求。`
+        emTitle: '包管理',
+        emDesc: `使用 <strong>PNPM</strong> 管理依赖，安装速度快，磁盘占用少`
       }
     ]
   },
   {
-    id: 'normalization',
-    label: '代码规范',
-    slogan: '代码如诗，<br /> 优雅永恒。',
-    desc: `代码规范，重塑开发美学与团队默契。依托 <strong>ESLint</strong> 实时捕获潜在错误，强制执行一致的代码风格，<strong>Prettier</strong> 自动格式化让每一行代码都如艺术品般整洁。全面支持 <strong>TypeScript</strong> 和 <strong>Vue 3</strong> 专属规则，代码质量直抵巅峰。集成 <strong>VS Code 插件</strong>，实时提示与修复，开发体验流畅无阻。规范的代码不仅是技术基石，更是团队协作的优雅宣言。`,
-    bannerPicUrl: eslint,
-    bannerPicFootage: '* ESLint 与 Prettier，打造整洁代码，成就优雅开发体验。',
+    id: 'build-deploy',
+    label: '构建与部署',
+    slogan: 'Vite构建 <br /> 多环境支持',
+    desc: `项目基于 <strong>Vite</strong> 构建工具，享受极速的开发体验和高效的生产构建。配置了多环境支持，可以灵活切换开发、测试、生产环境。支持 <strong>Vercel一键部署</strong>，只需将 Github 对应仓库导入，便可自动处理路由关系，剩下的交给 Vercel。`,
+    bannerPicUrl: vercelDepolyment,
+    bannerPicFootage: '* 一键部署到 Vercel',
     emphasizeList: [
       {
-        emTitle: '自动格式化',
-        emDesc: `<strong>Prettier</strong> 一键美化代码，告别风格分歧的烦恼。`
+        emTitle: '极速构建',
+        emDesc: `<strong>Vite</strong> 提供毫秒级热更新和极速的生产构建体验`
       },
       {
-        emTitle: '实时纠错',
-        emDesc: `<strong>ESLint</strong> 动态检测，代码质量始终如一。`
+        emTitle: '多环境配置',
+        emDesc: `支持 <strong>开发/生产</strong> 环境配置，灵活适配不同部署需求`
       },
       {
-        emTitle: '工具集成',
-        emDesc: `无缝适配 <strong>VS Code</strong> 与 CI 流程，开发效率再上新阶。`
+        emTitle: '自动部署',
+        emDesc: `集成 <strong>gh-pages</strong>，支持一键部署到GitHub Pages`
       }
     ]
   }

@@ -144,9 +144,9 @@ onUnmounted(() => {
           playbackRate="1"
         >
           <source src="@/assets/videos/collections.mp4" type="video/mp4" />
-          <!-- 视频加载失败时的后备背景 -->
-          <div class="video-fallback"></div>
         </video>
+        <!-- 视频加载失败时的后备背景 -->
+        <div class="video-fallback">视频加载中</div>
         <!-- 可选：在视频上添加遮罩层 -->
         <div class="video-overlay"></div>
       </div>
@@ -274,11 +274,9 @@ main {
       left: 0;
       width: 100%;
       height: 100%;
-      // background: rgba(0, 0, 0, 0.3); // 半透明黑色遮罩
-      // background: linear-gradient(45deg, rgba(255,0,150,0.3), rgba(0,255,255,0.3)); // 彩色渐变遮罩
     }
 
-    // 视频加载失败时的后备样式
+    // 视频加载等待或失败时的后备样式
     .video-fallback {
       position: absolute;
       top: 0;
@@ -286,6 +284,9 @@ main {
       width: 100%;
       height: 100%;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      z-index: -1;
+
+      text-align: center;
     }
   }
 

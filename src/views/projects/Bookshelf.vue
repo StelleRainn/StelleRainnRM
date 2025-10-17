@@ -91,7 +91,7 @@ const featureListRef = ref(null)
       overflow: hidden; // 禁止用户滑动，以免动画展示效果出错
 
       ul {
-        animation: scroll 10s linear 0s infinite normal backwards;
+        animation: scroll 14s linear 0s infinite normal backwards;
       }
 
       li {
@@ -133,7 +133,7 @@ const featureListRef = ref(null)
 @keyframes scroll {
   to {
     // 严格与 li 中的行高匹配，数量要与数组中的真数据匹配
-    transform: translateY(calc(-1 * 40px * 6));
+    transform: translateY(calc(-1 * 40px * 10));
   }
 }
 

@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-import bannerPic from '@/assets/images/general/createvue.png'
+import bannerPic from '@/assets/images/bookshelf/createvue.png'
 import vue3LogoPure1 from '@/assets/images/bookshelf/vue3LogoPure1.png'
 import elPlusLogoPure1 from '@/assets/images/bookshelf/elPlusLogoPure1.png'
 import piniaLogoPure1 from '@/assets/images/bookshelf/piniaLogoPure1.png'

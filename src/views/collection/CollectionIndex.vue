@@ -141,9 +141,9 @@ onUnmounted(() => {
           playsinline
           @loadeddata="handleVideoLoad"
           class="background-video"
-          playbackRate="2"
+          playbackRate="1"
         >
-          <source src="@/assets/videos/webstorm-release.mp4" type="video/mp4" />
+          <source src="@/assets/videos/collections.mp4" type="video/mp4" />
           <!-- 视频加载失败时的后备背景 -->
           <div class="video-fallback"></div>
         </video>

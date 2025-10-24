@@ -6,16 +6,14 @@ import vue3LogoPure1 from '@/assets/images/bookshelf/vue3LogoPure1.png'
 import elPlusLogoPure1 from '@/assets/images/bookshelf/elPlusLogoPure1.png'
 import piniaLogoPure1 from '@/assets/images/bookshelf/piniaLogoPure1.png'
 import vuerouter4PureLogoPure1 from '@/assets/images/bookshelf/vuerouter4LogoPure1.png'
+import axiosLogo from '@/assets/images/shoppingMall/axios-logo.png'
 import gitLogoPure1 from '@/assets/images/bookshelf/gitLogoPure1.png'
 import piniaPersist from '@/assets/images/bookshelf/piniaPersist.png'
 import vercelDepolyment from '@/assets/images/bookshelf/vercel-deployment.png'
 import axiosInterceptors from '@/assets/images/bookshelf/axios-interceptors.png'
-import elPlus from '@/assets/images/bookshelf/elPlus.png'
 import vueQuill from '@/assets/images/bookshelf/vue-quill.png'
 import vueRouter4Code from '@/assets/images/bookshelf/vueRouter4Code.png'
-import api from '@/assets/images/bookshelf/api.png'
 import gitLog from '@/assets/images/bookshelf/gitLog.png'
-import eslint from '@/assets/images/bookshelf/eslint.png'
 
 // 数组末尾填充冗余数据，动画循环时“以假乱真”
 export const featureList = ref([
@@ -65,7 +63,7 @@ export const highlights = ref([
     desc: '集成Vue Quill富文本编辑器，支持图片上传，为内容创作提供专业工具'
   },
   {
-    imgUrl: elPlusLogoPure1,
+    imgUrl: axiosLogo,
     title: 'HTTP请求封装',
     desc: '基于Axios封装完整请求库，统一错误处理，支持token自动管理'
   },

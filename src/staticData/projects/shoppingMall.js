@@ -1,201 +1,223 @@
 import { ref } from 'vue'
 
-import vue3LogoPure1 from '@/assets/images/bookshelf/vue3LogoPure1.png'
-import elPlusLogoPure1 from '@/assets/images/bookshelf/elPlusLogoPure1.png'
-import piniaLogoPure1 from '@/assets/images/bookshelf/piniaLogoPure1.png'
-import vuerouter4PureLogoPure1 from '@/assets/images/bookshelf/vuerouter4LogoPure1.png'
-import gitLogoPure1 from '@/assets/images/bookshelf/gitLogoPure1.png'
-import piniaPersist from '@/assets/images/bookshelf/piniaPersist.png'
-import elPlus from '@/assets/images/bookshelf/elPlus.png'
-import vueRouter4Code from '@/assets/images/bookshelf/vueRouter4Code.png'
-import api from '@/assets/images/bookshelf/api.png'
-import gitLog from '@/assets/images/bookshelf/gitLog.png'
-import eslint from '@/assets/images/bookshelf/eslint.png'
-
-export const highlights = ref([
-  {
-    imgUrl: vue3LogoPure1,
-    title: 'Vue3框架',
-    desc: '基于Vue3框架打造。广泛应用了 Vue3 基础知识点。组合式API使代码编写更加灵活'
-  },
-  {
-    imgUrl: elPlusLogoPure1,
-    title: 'Element Plus',
-    desc: '灵活强大的组件库'
-  },
-  {
-    imgUrl: piniaLogoPure1,
-    title: 'Pinia持久化',
-    desc: '使用Pinia完成时持久化管理。'
-  },
-  {
-    imgUrl: vuerouter4PureLogoPure1,
-    title: 'Vue Router 4',
-    desc: 'SPA开发。在Vue Router加持下，页面开发更符合思维逻辑习惯'
-  },
-  { imgUrl: gitLogoPure1, title: '工程管理', desc: '完备的 Git 体系' }
-])
+import vue2Logo from '@/assets/images/shoppingMall/vue2-logo.png'
+import vantLogo from '@/assets/images/shoppingMall/vant-logo.png'
+import vueLogo from '@/assets/images/shoppingMall/vue-logo.png'
+import vueRouter3Logo from '@/assets/images/shoppingMall/vue-router-3-logo.png'
+import axiosLogo from '@/assets/images/shoppingMall/axios-logo.png'
+import lessLogo from '@/assets/images/shoppingMall/less-logo.png'
+import shoppingMallIndexBg from '@/assets/images/shoppingMall/shoppingMall-index-with-bg.png'
+import githubLogo from '@/assets/images/shoppingMall/github-logo.png'
 
 // 数组末尾填充冗余数据，动画循环时“以假乱真”
 export const featureList = ref([
-  'Composition API',
-  'Vue Router',
+  'Vue Cli',
+  'Vue Router 3',
   'Single Page Application',
-  'Element Plus',
-  'Pinia',
+  'Vant UI',
+  'Vue X',
   'Axios',
-  'Composition API',
-  'Vue Router'
+  'Github Pages',
+  'Less',
+  'Vue Cli',
+  'Vue Router 3'
 ])
 
-// 技术点介绍
+export const highlights = ref([
+  {
+    imgUrl: vue2Logo,
+    title: 'Vue2 + Vue CLI',
+    desc: '基于Vue2框架与Vue CLI脚手架构建。完整的SPA单页应用架构，组件化开发思维贯穿始终'
+  },
+  {
+    imgUrl: vantLogo,
+    title: 'Vant UI 移动端',
+    desc: '采用Vant UI组件库打造原生移动端体验。按需引入优化包体积，触控交互流畅自然'
+  },
+  {
+    imgUrl: vueLogo,
+    title: 'Vuex 状态管理',
+    desc: '模块化Vuex架构管理复杂状态。购物车、用户信息等核心数据流转井然有序'
+  },
+  {
+    imgUrl: vueRouter3Logo,
+    title: '路由懒加载',
+    desc: '智能路由懒加载策略。首屏加载速度提升，页面切换丝滑流畅'
+  },
+  {
+    imgUrl: axiosLogo,
+    title: '真实接口对接',
+    desc: '完整的后端API对接体验。请求拦截、响应处理、错误提示一应俱全'
+  },
+  {
+    imgUrl: lessLogo,
+    title: 'Less 样式预处理',
+    desc: '使用Less预处理器编写样式。嵌套语法与变量管理让CSS开发更加高效'
+  },
+  {
+    imgUrl: shoppingMallIndexBg,
+    title: '移动端适配',
+    desc: '基于postcss-px-to-viewport的完美适配方案。多设备尺寸下视觉效果统一'
+  },
+  {
+    imgUrl: githubLogo,
+    title: 'GitHub Pages部署',
+    desc: '一键部署至GitHub Pages。完整的CI/CD工作流，项目上线轻松便捷'
+  }
+])
+
 export const introItemList = ref([
   {
-    id: 'framework',
-    label: 'Vue.js 3',
-    slogan: '渐进式框架 <br /> 快速上手，超高效率',
-    desc: `项目使用 <strong>Vue.js 3</strong> 作为主要开发框架，相比 Vue 2，Vue 3 提供了许多方便的新特性，例如<strong
-        >组合式 API</strong
-      >、<strong>内置语法糖</strong>、<strong>更高效的响应式系统</strong>，极大提高了项目的开发效率和灵活性。借助
-      <strong>Vite</strong> 这一新一代构建工具，冷启动速度提升
-      <strong>10 倍以上</strong>，热更新更是毫秒级响应，彻底告别“改一行等半天”的痛点。
-      <strong>Pinia</strong> 作为官方推荐状态管理库，轻量、直观且完全支持 TypeScript，彻底摒弃了 mutations
-      的冗余概念。再加上
-      <strong>Vue Router 4</strong>
-      的动态路由、路由级代码分割与导航守卫增强，整个技术栈在<strong>性能、可维护性与开发体验</strong>三个维度全面跃升，为复杂单页应用（SPA）与渐进式
-      Web 应用提供了坚实底座。`,
-    bannerPicUrl: vue3LogoPure1,
-    bannerPicFootage: '* 在 Terminal 使用使用简单的命令即可快速搭建一个功能完备的 Vue App',
+    id: 'vue2-framework',
+    label: 'Vue.js 2',
+    slogan: '渐进式框架 <br /> 稳定可靠，生产就绪',
+    desc: `项目采用 <strong>Vue.js 2</strong> 作为核心开发框架，这是一个在生产环境中久经考验的稳定版本。通过 <strong>Vue CLI</strong> 脚手架快速搭建项目架构，内置了完整的开发工具链。项目充分运用了Vue2的核心特性：<strong>响应式数据绑定</strong>、<strong>组件化开发</strong>、<strong>指令系统</strong>等，构建了一个功能完整的单页应用。配合 <strong>Vue Router</strong> 实现页面路由管理，<strong>Vuex</strong> 进行状态管理，形成了完整的Vue生态技术栈，为复杂的电商业务逻辑提供了坚实的技术基础。`,
+    bannerPicUrl: vue2Logo,
+    bannerPicFootage: '* Vue CLI 一键生成项目结构，开发效率显著提升',
     emphasizeList: [
       {
-        emTitle: '快速搭建',
-        emDesc: `使用使用简单的命令即可快速搭建一个功能完备的。<strong>内置 dev, build, lint脚本`
-      },
-      { emTitle: '响应式数据', emDesc: `通过 ref 引用标识符轻松创建响应式数据，使用插值表达式即可在模板中使用` },
-      { emTitle: '快速搭建', emDesc: `使用使用简单的命令即可快速搭建一个功能完备的。<strong>内置 dev, build, lint脚本` }
-    ]
-  },
-  {
-    id: 'persistence',
-    label: 'Pinia 持久化',
-    slogan: '状态长存，<br /> 数据无界。',
-    desc: `Pinia 持久化，重塑状态管理新境界。精心设计的 <strong>Pinia Plugin Persistedstate</strong>，以极简的方式将状态无缝存储至 <strong>LocalStorage</strong> 或 <strong>SessionStorage</strong>，确保页面刷新后数据依然稳如磐石。无论是用户偏好、复杂表单，还是动态购物车，<strong>一键持久化</strong> 让数据管理轻盈优雅。配合 Pinia 的直观 API 和 TypeScript 支持，开发体验如丝般顺滑，效率与可靠性并驾齐驱，成就无懈可击的前端体验。`,
-    bannerPicUrl: piniaPersist,
-    bannerPicFootage: '* 一行代码，状态永存，数据管理从未如此从容。',
-    emphasizeList: [
-      {
-        emTitle: '无缝存储',
-        emDesc: `<strong>LocalStorage</strong> 和 <strong>SessionStorage</strong> 双剑合璧，数据存储稳若磐石，刷新无忧。`
+        emTitle: '组件化架构',
+        emDesc: `采用 <strong>单文件组件</strong> 开发模式，代码结构清晰，复用性强`
       },
       {
-        emTitle: '灵活掌控',
-        emDesc: `自定义存储策略，适配 <strong>复杂业务场景</strong>，游刃有余应对多样需求。`
+        emTitle: '响应式数据',
+        emDesc: `基于 <strong>Object.defineProperty</strong> 的响应式系统，数据变化自动更新视图`
       },
       {
-        emTitle: '极致轻盈',
-        emDesc: `Pinia 插件设计精巧，<strong>零性能负担</strong>，为开发者带来优雅体验。`
+        emTitle: '生态完整',
+        emDesc: `Vue Router + Vuex + Vue CLI 完整技术栈，<strong>开箱即用</strong>`
       }
     ]
   },
   {
-    id: 'element-plus',
-    label: 'ElementPlus 组件库',
-    slogan: '美感天成，<br /> 效率非凡。',
-    desc: `ElementPlus 组件库，重新定义前端美学与效率。每一个组件都精心雕琢，<strong>开箱即用</strong>，从基础按钮到复杂数据表格，皆以极致流畅的体验满足多样化需求。支持 <strong>按需加载</strong> 和 <strong>动态主题</strong>，让品牌化界面设计如行云流水。内置 <strong>国际化支持</strong>，助力应用轻松迈向全球舞台。ElementPlus 以优雅的设计语言和强大的功能矩阵，为开发者打造无与伦比的创作自由。`,
-    bannerPicUrl: elPlus,
-    bannerPicFootage: '* 从表单到弹窗，ElementPlus 赋予界面设计无限可能。',
+    id: 'vant-mobile',
+    label: 'Vant UI 移动端组件库',
+    slogan: '轻量高效，<br /> 移动优先。',
+    desc: `项目采用 <strong>Vant UI</strong> 作为移动端组件库，专为移动端场景精心设计。通过 <strong>按需引入</strong> 的方式优化包体积，仅引入项目实际使用的组件如NavBar、Button、Toast、ActionSheet等。Vant提供了丰富的移动端交互组件，从基础的按钮、输入框到复杂的购物车、支付流程，都有对应的高质量组件支持。组件设计遵循移动端交互规范，<strong>触控体验</strong>流畅自然，为用户提供了接近原生App的使用体验。`,
+    bannerPicUrl: vue2Logo,
+    bannerPicFootage: '* 50+ 高质量组件，覆盖移动端开发的各种场景',
     emphasizeList: [
       {
-        emTitle: '组件矩阵',
-        emDesc: `涵盖 <strong>表单、表格、弹窗</strong> 等丰富场景，快速构建现代化界面。`
+        emTitle: '按需加载',
+        emDesc: `通过 <strong>babel-plugin-import</strong> 实现按需引入，有效控制包体积`
       },
       {
-        emTitle: '主题自由',
-        emDesc: `支持 <strong>动态换肤</strong> 和 CSS 变量，品牌风格一键呈现。`
+        emTitle: '移动优先',
+        emDesc: `专为移动端设计，<strong>触控交互</strong>体验接近原生应用`
+      },
+      {
+        emTitle: '主题定制',
+        emDesc: `支持 <strong>Less变量</strong> 定制主题，轻松适配品牌风格`
       }
     ]
   },
   {
-    id: 'vue-router-spa',
-    label: 'Vue 路由与 SPA 开发',
-    slogan: '导航无痕，<br /> 体验超然。',
-    desc: `Vue Router 4，为单页应用（SPA）注入非凡活力。凭借 <strong>动态路由</strong> 和 <strong>懒加载</strong> 技术，页面切换快如闪电，首屏加载速度提升 <strong>50%以上</strong>。支持 <strong>嵌套路由</strong> 和 <strong>导航守卫</strong>，轻松实现权限管理与流畅过渡动画。结合 Vite 的 <strong>代码分割</strong>，性能与可维护性双双突破天际。Vue Router 4 以极致简洁的逻辑，赋予开发者打造丝滑 SPA 体验的无限可能。`,
-    bannerPicUrl: vueRouter4Code,
-    bannerPicFootage: '* 动态路由与懒加载，铸就极速单页应用体验。',
+    id: 'vuex-state',
+    label: 'Vuex 状态管理',
+    slogan: '状态集中，<br /> 数据有序。',
+    desc: `采用 <strong>Vuex</strong> 进行全局状态管理，将复杂的应用状态集中管理。项目中实现了 <strong>模块化</strong> 的Vuex架构，将用户信息(user)和购物车(cart)等不同业务逻辑分离到独立模块中。购物车模块实现了商品添加、删除、数量修改、全选等复杂交互逻辑，通过 <strong>getters</strong> 计算派生状态如总价、总数量等。状态变更严格遵循单向数据流，通过 <strong>mutations</strong> 同步修改状态，<strong>actions</strong> 处理异步操作，确保数据流转的可预测性和可维护性。`,
+    bannerPicUrl: vue2Logo,
+    bannerPicFootage: '* 模块化状态管理，复杂业务逻辑井然有序',
     emphasizeList: [
       {
-        emTitle: '极速导航',
-        emDesc: `<strong>懒加载</strong> 与代码分割，首屏性能提升至全新高度。`
+        emTitle: '模块化设计',
+        emDesc: `按业务功能拆分模块，<strong>user</strong> 和 <strong>cart</strong> 模块职责清晰`
       },
       {
-        emTitle: '智能守卫',
-        emDesc: `<strong>导航守卫</strong> 确保权限控制与页面过渡优雅自如。`
+        emTitle: '计算属性',
+        emDesc: `通过 <strong>getters</strong> 实现购物车总价、总数量等派生状态计算`
       },
       {
-        emTitle: '灵活路由',
-        emDesc: `支持 <strong>动态与嵌套路由</strong>，复杂页面逻辑一手掌控。`
+        emTitle: '数据流规范',
+        emDesc: `严格遵循 <strong>单向数据流</strong>，状态变更可追踪可预测`
       }
     ]
   },
   {
-    id: 'backend-interface',
-    label: '真实后端接口',
-    slogan: '连接无间，<br /> 数据流转。',
-    desc: `后端接口对接，从未如此精准高效。基于 <strong>OpenAPI/Swagger</strong> 规范，接口文档清晰如镜，<strong>自动生成</strong> TypeScript 类型定义，彻底告别手动维护的繁琐。支持 <strong>RESTful API</strong> 和 <strong>GraphQL</strong>，适配多样业务场景。结合 <strong>Axios</strong> 的流畅请求处理与 <strong>Mock 数据</strong> 功能，前后端并行开发效率翻倍，开发节奏快如疾风，为项目交付注入无限动能。`,
-    bannerPicUrl: api,
-    bannerPicFootage: '* 规范文档与 Mock 数据，助力前后端无缝协作。',
+    id: 'router-lazy',
+    label: 'Vue Router 与懒加载',
+    slogan: '路由智能，<br /> 性能卓越。',
+    desc: `项目采用 <strong>Vue Router</strong> 构建单页应用的路由系统，实现了页面间的无刷新切换。通过 <strong>路由懒加载</strong> 技术，将不同页面组件按需加载，显著提升首屏加载速度。配置了完整的路由守卫机制，实现了 <strong>登录状态检查</strong> 和权限控制。支持 <strong>动态路由参数</strong>，如商品详情页的商品ID传递。嵌套路由设计让布局组件与内容组件分离，底部导航栏(Tabbar)与页面内容独立管理，提升了代码的可维护性。`,
+    bannerPicUrl: vue2Logo,
+    bannerPicFootage: '* 路由懒加载 + 导航守卫，性能与安全并重',
     emphasizeList: [
       {
-        emTitle: '规范定义',
-        emDesc: `<strong>OpenAPI</strong> 驱动接口文档，类型自动生成，开发更精准。`
+        emTitle: '懒加载优化',
+        emDesc: `通过 <strong>动态import</strong> 实现组件懒加载，首屏性能大幅提升`
       },
       {
-        emTitle: '并行开发',
-        emDesc: `<strong>Mock 数据</strong> 解放前端，告别等待后端接口的瓶颈。`
+        emTitle: '权限控制',
+        emDesc: `<strong>beforeEach</strong> 导航守卫实现登录状态检查和页面访问控制`
+      },
+      {
+        emTitle: '嵌套路由',
+        emDesc: `Layout布局与子页面分离，<strong>代码结构</strong>清晰易维护`
+      }
+    ]
+  },
+  {
+    id: 'api-integration',
+    label: '真实后端接口对接',
+    slogan: '接口规范，<br /> 数据流畅。',
+    desc: `项目与真实的后端API进行对接，实现了完整的前后端分离开发模式。基于 <strong>Axios</strong> 封装了统一的请求工具，配置了请求和响应拦截器。请求拦截器自动添加 <strong>Loading状态</strong> 和 <strong>Token认证</strong>，响应拦截器统一处理错误信息和成功提示。API模块化管理，将不同业务的接口分别封装到address、cart、category、home、login、order、product、user等模块中，接口调用清晰明确。支持商品列表、详情查询、购物车操作、订单管理、用户认证等完整的电商业务流程。`,
+    bannerPicUrl: vue2Logo,
+    bannerPicFootage: '* 完整的API对接体验，从登录到支付全流程覆盖',
+    emphasizeList: [
+      {
+        emTitle: '请求拦截',
+        emDesc: `自动添加 <strong>Loading效果</strong> 和 <strong>Token认证</strong>，用户体验流畅`
+      },
+      {
+        emTitle: '模块化管理',
+        emDesc: `按业务功能分离API模块，<strong>接口调用</strong>清晰有序`
+      },
+      {
+        emTitle: '错误处理',
+        emDesc: `统一的 <strong>错误提示</strong> 和异常处理机制，提升应用稳定性`
+      }
+    ]
+  },
+  {
+    id: 'mobile-adaptation',
+    label: '移动端适配方案',
+    slogan: '一套代码，<br /> 多屏适配。',
+    desc: `项目采用 <strong>postcss-px-to-viewport</strong> 实现移动端适配，将设计稿中的px单位自动转换为vw视口单位，确保在不同尺寸的移动设备上都能呈现一致的视觉效果。配合 <strong>Less预处理器</strong> 编写样式，通过变量、嵌套、混合等特性提升CSS开发效率。项目整体采用移动优先的设计理念，所有交互都针对触屏操作进行了优化。通过合理的布局设计和响应式处理，确保从小屏手机到大屏平板都能获得良好的用户体验。`,
+    bannerPicUrl: vue2Logo,
+    bannerPicFootage: '* 基于viewport的适配方案，多设备完美呈现',
+    emphasizeList: [
+      {
+        emTitle: 'viewport适配',
+        emDesc: `<strong>postcss-px-to-viewport</strong> 自动转换单位，适配各种屏幕尺寸`
+      },
+      {
+        emTitle: 'Less预处理',
+        emDesc: `使用 <strong>Less</strong> 编写样式，变量管理和嵌套语法提升开发效率`
+      },
+      {
+        emTitle: '触屏优化',
+        emDesc: `所有交互针对 <strong>移动端触控</strong> 优化，操作体验自然流畅`
       }
     ]
   },
   {
     id: 'engineering',
-    label: '工程化',
-    slogan: '部署如风，<br /> 协作无界。',
-    desc: `工程化体系，重新定义团队协作与上线效率。依托 <strong>Git</strong> 的版本控制，提交规范清晰如水，<strong>Husky</strong> 自动校验确保每行代码无可挑剔。结合 <strong>GitHub Actions</strong> 和 <strong>Vercel</strong>，实现 <strong>CI/CD 自动化部署</strong>，从代码推送至上线仅需数分钟。支持 <strong>多环境配置</strong>，开发、测试、生产环境切换如行云流水。工程化让项目管理优雅高效，团队协作如同一场完美的交响乐。`,
-    bannerPicUrl: gitLog,
-    bannerPicFootage: '* 自动化部署与规范提交，项目上线从未如此轻松。',
+    label: '工程化与部署',
+    slogan: '开发规范，<br /> 部署便捷。',
+    desc: `项目采用完整的前端工程化方案，基于 <strong>Vue CLI</strong> 构建工具链，内置了开发服务器、代码打包、代码检查等功能。使用 <strong>ESLint</strong> 进行代码规范检查，确保代码质量和团队协作的一致性。配置了 <strong>GitHub Pages</strong> 自动部署，通过gh-pages工具实现一键部署。项目支持多环境配置，开发环境和生产环境使用不同的publicPath配置。完整的package.json脚本管理，包含serve、build、lint、deploy等常用命令，开发流程标准化。`,
+    bannerPicUrl: vue2Logo,
+    bannerPicFootage: '* 从开发到部署的完整工程化体验',
     emphasizeList: [
       {
-        emTitle: '自动化部署',
-        emDesc: `<strong>GitHub Actions</strong> 与 <strong>Vercel</strong>，一键上线，效率拉满。`
+        emTitle: '代码规范',
+        emDesc: `<strong>ESLint</strong> 确保代码质量，团队协作更加高效`
       },
       {
-        emTitle: '规范管理',
-        emDesc: `<strong>Husky</strong> 确保提交信息清晰，代码历史整洁如新。`
+        emTitle: '自动部署',
+        emDesc: `<strong>GitHub Pages</strong> 一键部署，项目上线轻松便捷`
       },
       {
-        emTitle: '多环境适配',
-        emDesc: `无缝切换 <strong>开发、测试、生产</strong> 环境，灵活应对复杂需求。`
-      }
-    ]
-  },
-  {
-    id: 'normalization',
-    label: '代码规范',
-    slogan: '代码如诗，<br /> 优雅永恒。',
-    desc: `代码规范，重塑开发美学与团队默契。依托 <strong>ESLint</strong> 实时捕获潜在错误，强制执行一致的代码风格，<strong>Prettier</strong> 自动格式化让每一行代码都如艺术品般整洁。全面支持 <strong>TypeScript</strong> 和 <strong>Vue 3</strong> 专属规则，代码质量直抵巅峰。集成 <strong>VS Code 插件</strong>，实时提示与修复，开发体验流畅无阻。规范的代码不仅是技术基石，更是团队协作的优雅宣言。`,
-    bannerPicUrl: eslint,
-    bannerPicFootage: '* ESLint 与 Prettier，打造整洁代码，成就优雅开发体验。',
-    emphasizeList: [
-      {
-        emTitle: '自动格式化',
-        emDesc: `<strong>Prettier</strong> 一键美化代码，告别风格分歧的烦恼。`
-      },
-      {
-        emTitle: '实时纠错',
-        emDesc: `<strong>ESLint</strong> 动态检测，代码质量始终如一。`
-      },
-      {
-        emTitle: '工具集成',
-        emDesc: `无缝适配 <strong>VS Code</strong> 与 CI 流程，开发效率再上新阶。`
+        emTitle: '多环境支持',
+        emDesc: `开发和生产环境 <strong>配置分离</strong>，部署灵活可控`
       }
     ]
   }

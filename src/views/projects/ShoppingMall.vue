@@ -132,7 +132,7 @@ const featureListRef = ref(null)
 @keyframes scroll {
   to {
     // 严格与 li 中的行高匹配，数量要与数组中的真数据匹配
-    transform: translateY(calc(-1 * 40px * 6));
+    transform: translateY(calc(-1 * 40px * 8));
   }
 }
 

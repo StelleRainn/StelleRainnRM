@@ -63,7 +63,7 @@ const featureListRef = ref(null)
     z-index: 0;
     width: 100%;
     height: 100%;
-    background: url('@/assets/images/shoppingMall/vueBg.jpg') no-repeat bottom right/cover;
+    background: url('@/assets/images/shoppingMall/ipadpro.png') no-repeat center right/cover;
   }
 
   .content-layer {

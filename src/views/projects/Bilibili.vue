@@ -20,6 +20,11 @@ const featureListRef = ref(null)
         <div class="intro">
           <h1 class="main-title">B站首页复刻</h1>
           <div class="introduction">一位前端工程师的起点之作</div>
+          <div class="extra-introduction" style="margin-top: 10px; font-size: 14px">
+            <el-link type="info" underline="never" href="https://www.pixiv.net/users/24036634">
+              * 背景图片来自Pixiv画师 アナ🧸 BOOTHオープン
+            </el-link>
+          </div>
         </div>
         <div class="featureList" ref="featureListRef">
           <ul>
@@ -64,7 +69,7 @@ const featureListRef = ref(null)
     z-index: 0;
     width: 100%;
     height: 100%;
-    background: url('@/assets/images/bookshelf/vueBg.jpg') no-repeat bottom right/cover;
+    background: url('@/assets/images/bilibili/furina.jpeg') no-repeat bottom right/cover;
   }
 
   .content-layer {

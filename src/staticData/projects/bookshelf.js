@@ -12,8 +12,10 @@ import piniaPersist from '@/assets/images/bookshelf/piniaPersist.png'
 import vercelDepolyment from '@/assets/images/bookshelf/vercel-deployment.png'
 import axiosInterceptors from '@/assets/images/bookshelf/axios-interceptors.png'
 import vueQuill from '@/assets/images/bookshelf/vue-quill.png'
+import vueQuillLogo from '@/assets/images/bookshelf/vue-quill-logo.png'
 import vueRouter4Code from '@/assets/images/bookshelf/vueRouter4Code.png'
 import gitLog from '@/assets/images/bookshelf/gitLog.png'
+import crud from '@/assets/images/bookshelf/crud.png'
 
 // 数组末尾填充冗余数据，动画循环时“以假乱真”
 export const featureList = ref([
@@ -53,12 +55,12 @@ export const highlights = ref([
     desc: '基于Vue Router 4构建SPA应用，路由导航守卫保护，页面切换流畅无刷新'
   },
   {
-    imgUrl: gitLogoPure1,
+    imgUrl: crud,
     title: '完整CRUD功能',
     desc: '实现文章管理、分类管理、用户管理等完整业务功能，涵盖增删改查操作'
   },
   {
-    imgUrl: vue3LogoPure1,
+    imgUrl: vueQuillLogo,
     title: '富文本编辑器',
     desc: '集成Vue Quill富文本编辑器，支持图片上传，为内容创作提供专业工具'
   },

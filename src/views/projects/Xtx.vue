@@ -64,7 +64,8 @@ const featureListRef = ref(null)
     z-index: 0;
     width: 100%;
     height: 100%;
-    background: url('@/assets/images/bookshelf/vueBg.jpg') no-repeat bottom right/cover;
+    background: url('@/assets/images/xtx/macbookpro.jpg') no-repeat bottom right/cover;
+    // background: linear-gradient(45deg, #4afbd5, #fbff21);
   }
 
   .content-layer {
@@ -123,7 +124,7 @@ const featureListRef = ref(null)
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: linear-gradient(135deg, rgba(#000, 0.9), rgba(#111, 0.2));
+      background: linear-gradient(135deg, rgba(#000, 1), rgba(#111, 0.1));
     }
   }
 }

@@ -65,16 +65,16 @@ export const subBannerList = ref([
     subTitle: '一如雨中蔷薇，在星光与水流之间，静静盛放。',
     bgUrl: rosaCover,
     routerName: 'rosa',
-    visible: false
+    visible: true
   },
   {
     mainTitle: '改创计划 S13: 破晓',
     subTitle: '"咫尺侵晨，所谓破晓，终将自由。"',
     bgUrl: dawnbreakCover,
     routerName: 'reform-create',
-    visible: false
+    visible: true
   },
-  { mainTitle: '与我联系', subTitle: '你的意见，我听得见', bgUrl: contactCover, routerName: 'contact', visible: false },
+  { mainTitle: '与我联系', subTitle: '你的意见，我听得见', bgUrl: contactCover, routerName: 'contact', visible: true },
   {
     mainTitle: '试验场',
     subTitle: '探索网站背后所采用的原型技术',

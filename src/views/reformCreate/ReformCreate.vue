@@ -1,7 +1,39 @@
 <script setup></script>
 
 <template>
-  <span>RefromCreatePage</span>
+  <div class="temp">
+    <div class="background-layer"></div>
+    <h1>崭新的黎明，近在咫尺。</h1>
+  </div>
 </template>
 
-<style lang="sass" scoped></style>
+<style lang="scss" scoped>
+.temp {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  h1 {
+    // 彩色文字
+    background: linear-gradient(to right, #fa6e5c, #038db3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    padding-top: 40vh;
+    text-align: center;
+    font-size: 64px;
+    letter-spacing: 1rem;
+    z-index: 1;
+  }
+
+  .background-layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #4bccef, #f47b2a);
+    z-index: -1;
+  }
+}
+</style>

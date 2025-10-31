@@ -67,6 +67,7 @@ const navigateTo = (path) => {
           </template>
         </el-dropdown>
       </li>
+      <li><el-link :underline="false" @click="navigateTo('/notification')">公告</el-link></li>
     </ul>
   </header>
 </template>

@@ -63,6 +63,11 @@ const router = createRouter({
         { path: 'chasing-rain-beta-2', component: () => import('@/views/playground/single/ChasingRainBeta2.vue') },
         { path: 'continual-gradient', component: () => import('@/views/playground/single/ContinualGradient.vue') }
       ]
+    },
+    {
+      path: '/notification',
+      name: 'notification',
+      component: () => import('@/views/notification/notification.vue')
     }
   ]
 })

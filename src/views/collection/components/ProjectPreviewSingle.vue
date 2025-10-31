@@ -1,17 +1,44 @@
 <script setup>
 import router from '@/router'
 import { ArrowRight } from '@element-plus/icons-vue'
+import { ElMessage } from 'element-plus'
+import { ElMessageBox } from 'element-plus'
 
 const props = defineProps({
   id: Number || String,
   imgUrl: String,
-  routerName: String
+  routerName: String,
+  onlineUrl: String
 })
 
 const onVisit = () => {
   router.push({
     name: props.routerName
   })
+}
+
+const onExperence = () => {
+  if (props.onlineUrl) {
+    ElMessageBox.confirm('即将访问外部链接，是否继续', '提示', {
+      confirmButtonText: '是',
+      cancelButtonText: '取消',
+      type: 'primary'
+    })
+      .then(() => {
+        location.href = props.onlineUrl
+      })
+      .catch(() => {
+        ElMessage({
+          type: 'info',
+          message: '取消跳转'
+        })
+      })
+  } else {
+    ElMessage({
+      type: 'warning',
+      message: '发生错误，请联系作者恢复'
+    })
+  }
 }
 </script>
 
@@ -25,11 +52,11 @@ const onVisit = () => {
       <slot name="project-desc"> default-desc </slot>
     </div>
     <div class="button-group">
-      <el-button type="primary" plain round size="large">
-        访问 Github
+      <el-button type="primary" plain round size="large" @click="onVisit">
+        了解更多
         <el-icon><ArrowRight /></el-icon>
       </el-button>
-      <el-button @click="onVisit" type="primary" round size="large">在线体验</el-button>
+      <el-button type="primary" round size="large" @click="onExperence">在线体验</el-button>
     </div>
   </div>
 </template>

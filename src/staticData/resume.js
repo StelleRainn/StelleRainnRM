@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-import avatarImg from '@/assets/images/general/avatar-image.jpg'
+import avatarImg from '@/assets/images/general/avatar.jpeg'
 import bookshelfResmBg from '@/assets/images/bookshelf/bookshelfResmBg.png'
 import shoppingMallResmBg from '@/assets/images/shoppingMall/shoppingMallResmBg.png'
 import xtxResmBg from '@/assets/images/xtx/xtxResmBg.png'

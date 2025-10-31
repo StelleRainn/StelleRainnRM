@@ -6,6 +6,7 @@ import GeneralHeader from '@/components/GeneralHeader.vue'
 import ProjectPreviewSingle from './components/ProjectPreviewSingle.vue'
 
 import { headerContents, galleryListContents } from '@/staticData/collectionIndex'
+import router from '@/router'
 
 // 画廊相关：ref、限位与节流状态 （Generate by TRAE AI）
 const galleryListRef = ref(null)
@@ -117,7 +118,7 @@ onUnmounted(() => {
   <GeneralHeader></GeneralHeader>
   <header class="collection-index-header">
     <ul>
-      <li v-for="content in headerContents" :key="content.imgUrl">
+      <li v-for="content in headerContents" :key="content.imgUrl" @click="router.push({ name: content.routerName })">
         <img :src="content.imgUrl" />
         <span>{{ content.name }}</span>
       </li>
@@ -159,7 +160,12 @@ onUnmounted(() => {
         <ul ref="galleryListRef" @scroll="onGalleryScroll">
           <!-- li 已指定宽高 -->
           <li v-for="content in galleryListContents" :key="content">
-            <ProjectPreviewSingle :imgUrl="content.imgUrl" :id="content.id" :routerName="content.routerName">
+            <ProjectPreviewSingle
+              :imgUrl="content.imgUrl"
+              :id="content.id"
+              :routerName="content.routerName"
+              :onlineUrl="content.onlineUrl"
+            >
               <template #project-name>{{ content.name }}</template>
               <template #project-desc>{{ content.desc }}</template>
             </ProjectPreviewSingle>
@@ -220,6 +226,10 @@ onUnmounted(() => {
         font-size: 13px;
         line-height: 13px;
         color: rgba(255, 255, 255, 1);
+      }
+
+      &:hover {
+        cursor: pointer;
       }
     }
   }

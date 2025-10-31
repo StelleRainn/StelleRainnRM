@@ -19,7 +19,7 @@ const featureListRef = ref(null)
       <div class="content-layer">
         <div class="intro">
           <h1 class="main-title">小兔鲜儿</h1>
-          <div class="introduction">基础不牢，地动山摇 —— 广泛运用基础 H5C3</div>
+          <div class="introduction">基础不牢，地动山摇 —— 纯 H5C3 实践项目</div>
         </div>
         <div class="featureList" ref="featureListRef">
           <ul>

@@ -19,7 +19,7 @@ const featureListRef = ref(null)
       <div class="content-layer">
         <div class="intro">
           <h1 class="main-title">智慧商城</h1>
-          <div class="introduction">广泛实践Vue2基础</div>
+          <div class="introduction">基于 SPA 设计，广泛实践 Vue 2 基础</div>
         </div>
         <div class="featureList" ref="featureListRef">
           <ul>

@@ -17,7 +17,7 @@ export const projectsList = ref([
     routerName: 'bookshelf',
     bgUrl: bookshelfHeroBanner,
     name: '蔷薇丛的小书架',
-    desc: 'Vue 3 项目，大量使用 Element Plus 组件库',
+    desc: '从组合式 API 到 Pinia 持久化， 广泛实践 Vue 3基础',
     onlineUrl: 'https://bookshlef-vue3-demo.vercel.app/',
     textTheme: '#fff'
   },
@@ -26,16 +26,23 @@ export const projectsList = ref([
     routerName: 'shopping-mall',
     bgUrl: shoppingMallHeroBanner,
     name: '智慧商城',
-    desc: 'Vue 2 项目，配合 Vant UI 实现，移动端布局',
+    desc: '基于 SPA 设计，广泛实践 Vue 2 基础',
     textTheme: '#000'
   },
-  { id: 3, routerName: 'xtx', bgUrl: xtxHerobanner, name: '小兔鲜儿', desc: '纯 HTML + CSS 项目', textTheme: '#000' },
+  {
+    id: 3,
+    routerName: 'xtx',
+    bgUrl: xtxHerobanner,
+    name: '小兔鲜儿',
+    desc: '基础不牢，地动山摇 —— 纯 H5C3 实践项目',
+    textTheme: '#000'
+  },
   {
     id: 4,
     routerName: 'werace',
     bgUrl: weraceHerobanner,
     name: 'WeRace',
-    desc: 'PHP & MySQL 项目，强化了前端基础，打通了基础全栈',
+    desc: '窥见全栈 —— 不只是课设：H5C3 + PHP + MySQL',
     textTheme: '#fff'
   },
   {
@@ -43,7 +50,7 @@ export const projectsList = ref([
     routerName: 'bilibili',
     bgUrl: bilibiliHeroBanner,
     name: 'B站首页复刻',
-    desc: '第一份前端工程，HTML + CSS + 少量 JS',
+    desc: '一位前端工程师的起点之作',
     textTheme: '#000'
   }
 ])

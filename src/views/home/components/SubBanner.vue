@@ -1,14 +1,25 @@
 <script setup>
 import { ref } from 'vue'
 import { ArrowRight } from '@element-plus/icons-vue'
+import { ElMessageBox } from 'element-plus'
+import router from '@/router'
+
 const props = defineProps({
-  bgUrl: String
+  itemInfo: Object
 })
 
 const mainContainerRef = ref()
 
 const handleClick = (url, e) => {
-  console.log(url, e.target)
+  if (props.itemInfo.visible) {
+    router.push({
+      name: props.itemInfo.routerName
+    })
+  } else {
+    ElMessageBox.alert('本模块仍在开发中', '提示', {
+      confirmButtonText: '好'
+    })
+  }
 }
 
 // 控制样式
@@ -33,11 +44,14 @@ const onMouseLeave = () => {
     <div
       class="main-container"
       ref="mainContainerRef"
-      @click.stop="handleClick(props.bgUrl, $event)"
+      @click.stop="handleClick(props.itemInfo.bgUrl, $event)"
       @mouseenter="onMouseEnter"
       @mouseleave="onMouseLeave"
     >
-      <div class="background-layer" :style="{ backgroundImage: props.bgUrl ? `url(${props.bgUrl})` : `none` }"></div>
+      <div
+        class="background-layer"
+        :style="{ backgroundImage: props.itemInfo.bgUrl ? `url(${props.itemInfo.bgUrl})` : `none` }"
+      ></div>
       <div class="content-layer">
         <div class="text-group">
           <div class="main-title">

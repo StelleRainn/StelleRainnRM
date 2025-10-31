@@ -101,7 +101,7 @@ const handleClick = (e) => {
           <PrimeBanner></PrimeBanner>
         </section>
         <section id="banner4" class="sub-banner">
-          <SubBanner v-for="(item, index) in subBannerList" :key="index" :bgUrl="item.bgUrl">
+          <SubBanner v-for="(item, index) in subBannerList" :key="index" :itemInfo="item">
             <template #main-title>{{ item.mainTitle }}</template>
             <template #sub-title>{{ item.subTitle }}</template>
           </SubBanner>

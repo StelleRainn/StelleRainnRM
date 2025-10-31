@@ -1,16 +1,23 @@
 <script setup>
 // 可以添加一些交互逻辑，比如视频加载状态等
 import { ref } from 'vue'
+import router from '@/router'
 
 const videoLoaded = ref(false)
 
 const handleVideoLoad = () => {
   videoLoaded.value = true
 }
+
+const onVisiting = () => {
+  router.push({
+    name: 'chasing-rain'
+  })
+}
 </script>
 
 <template>
-  <div class="main-container">
+  <div class="main-container" @click="onVisiting">
     <!-- 背景层：视频背景 -->
     <div class="background-layer">
       <video autoplay loop muted preload="auto" playsinline @loadeddata="handleVideoLoad" class="background-video">

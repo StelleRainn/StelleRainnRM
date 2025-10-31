@@ -1,4 +1,5 @@
 <script setup>
+import router from '@/router'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const windowWidth = ref(window.innerWidth)
@@ -41,11 +42,17 @@ onMounted(() => {
     window.removeEventListener('resize', updatewindowWidth)
   })
 })
+
+const onVisiting = () => {
+  router.push({
+    name: 'resume'
+  })
+}
 </script>
 
 <template>
   <!-- Resume Banner 内部样式统一设置 100% 高度， 在外部使用组件时，指定具体高度 -->
-  <div ref="containerRef" class="main-container">
+  <div ref="containerRef" class="main-container" @click="onVisiting">
     <div class="background-layer">
       <!-- 流光体 -->
       <ul>

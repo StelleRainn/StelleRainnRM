@@ -1,5 +1,7 @@
 <script setup>
 import router from '@/router'
+import { ElMessage } from 'element-plus'
+import { ElMessageBox } from 'element-plus'
 
 const props = defineProps({
   projectInfos: Object
@@ -13,6 +15,27 @@ const onGettingDetail = () => {
 
 const onExperienceOnline = (e) => {
   e.stopPropagation()
+  if (props.projectInfos.onlineUrl) {
+    ElMessageBox.confirm('即将打开外部链接，是否继续？', '在线访问项目', {
+      confirmButtonText: '是',
+      cancelButtonText: '取消',
+      type: 'primary'
+    })
+      .then(() => {
+        location.href = props.projectInfos.onlineUrl
+      })
+      .catch(() => {
+        ElMessage({
+          type: 'info',
+          message: '跳转取消'
+        })
+      })
+  } else {
+    ElMessage({
+      type: 'warning',
+      message: '发生错误，请联系作者恢复'
+    })
+  }
 }
 </script>
 
@@ -26,7 +49,7 @@ const onExperienceOnline = (e) => {
       :style="{ backgroundImage: props.projectInfos.bgUrl ? `url(${props.projectInfos.bgUrl})` : 'none' }"
     ></div>
     <!-- 内容层 -->
-    <div class="content-layer" @click="onGettingDetail(artworkId)">
+    <div class="content-layer" @click="onGettingDetail">
       <h1>
         <slot name="main-title">默认大标题</slot>
       </h1>
@@ -36,7 +59,7 @@ const onExperienceOnline = (e) => {
       <div class="button-group">
         <el-button type="primary" round size="large">进一步了解</el-button>
         <!-- 需要显式传递 $event 或者使用 @click.stop -->
-        <el-button round plain size="large" @click="onExperienceOnline(artworkId, $event)">在线体验</el-button>
+        <el-button round plain size="large" @click="onExperienceOnline($event)">在线体验</el-button>
       </div>
     </div>
   </div>

@@ -12,13 +12,13 @@ const router = createRouter({
   },
   routes: [
     { path: '/', component: () => import('@/App.vue'), redirect: '/home' },
-    { path: '/home', component: () => import('@/views/home/HomeIndex.vue') },
-    { path: '/resume', component: () => import('@/views/resume/ResumeIndex.vue') },
-    { path: '/collection', component: () => import('@/views/collection/CollectionIndex.vue') },
-    { path: '/chasing-rain', component: () => import('@/views/chasingRain/ChasingRain.vue') },
-    { path: '/rosa', component: () => import('@/views/rosa/Rosa.vue') },
-    { path: '/reform-create', component: () => import('@/views/reformCreate/ReformCreate.vue') },
-    { path: '/contact', component: () => import('@/views/contact/Contact.vue') },
+    { path: '/home', name: 'home', component: () => import('@/views/home/HomeIndex.vue') },
+    { path: '/resume', name: 'resume', component: () => import('@/views/resume/ResumeIndex.vue') },
+    { path: '/collection', name: 'collectionIndex', component: () => import('@/views/collection/CollectionIndex.vue') },
+    { path: '/chasing-rain', name: 'chasing-rain', component: () => import('@/views/chasingRain/ChasingRain.vue') },
+    { path: '/rosa', name: 'rosa', component: () => import('@/views/rosa/Rosa.vue') },
+    { path: '/reform-create', name: 'reform-create', component: () => import('@/views/reformCreate/ReformCreate.vue') },
+    { path: '/contact', name: 'contact', component: () => import('@/views/contact/Contact.vue') },
     {
       // 忽略父组件，仅利用路由父子关系（4.1+特性）
       path: '/project',
@@ -54,7 +54,11 @@ const router = createRouter({
       path: '/playground',
       children: [
         { path: 'try-elanchor', component: () => import('@/views/playground/single/TryElAnchor.vue') },
-        { path: 'try-elanchor2', component: () => import('@/views/playground/single/TryElAnchor2.vue') },
+        {
+          path: 'try-elanchor2',
+          name: 'try-elanchor2',
+          component: () => import('@/views/playground/single/TryElAnchor2.vue')
+        },
         { path: 'chasing-rain-beta-1', component: () => import('@/views/playground/single/ChasingRainBeta1.vue') },
         { path: 'chasing-rain-beta-2', component: () => import('@/views/playground/single/ChasingRainBeta2.vue') },
         { path: 'continual-gradient', component: () => import('@/views/playground/single/ContinualGradient.vue') }

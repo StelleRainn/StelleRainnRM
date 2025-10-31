@@ -27,6 +27,7 @@ export const projectsList = ref([
     bgUrl: shoppingMallHeroBanner,
     name: '智慧商城',
     desc: '基于 SPA 设计，广泛实践 Vue 2 基础',
+    onlineUrl: 'https://stellerainn.github.io/shopping-mall-vue2-demo/',
     textTheme: '#000'
   },
   {
@@ -35,6 +36,7 @@ export const projectsList = ref([
     bgUrl: xtxHerobanner,
     name: '小兔鲜儿',
     desc: '基础不牢，地动山摇 —— 纯 H5C3 实践项目',
+    onlineUrl: 'https://stellerainn.github.io/xiaotuxian-pc/',
     textTheme: '#000'
   },
   {
@@ -43,6 +45,7 @@ export const projectsList = ref([
     bgUrl: weraceHerobanner,
     name: 'WeRace',
     desc: '窥见全栈 —— 不只是课设：H5C3 + PHP + MySQL',
+    onlineUrl: 'https://github.com/StelleRainn/WeRace',
     textTheme: '#fff'
   },
   {
@@ -51,13 +54,32 @@ export const projectsList = ref([
     bgUrl: bilibiliHeroBanner,
     name: 'B站首页复刻',
     desc: '一位前端工程师的起点之作',
+    onlineUrl: 'https://stellerainn.github.io/bilibili-imitation/',
     textTheme: '#000'
   }
 ])
 
 export const subBannerList = ref([
-  { mainTitle: '"蔷薇" - The IP', subTitle: '一如雨中蔷薇，在星光与水流之间，静静盛放。', bgUrl: rosaCover },
-  { mainTitle: '改创计划 S13: 破晓', subTitle: '"咫尺侵晨，所谓破晓，终将自由。"', bgUrl: dawnbreakCover },
-  { mainTitle: '与我联系', subTitle: '你的意见，我听得见', bgUrl: contactCover },
-  { mainTitle: '试验场', subTitle: '探索网站背后所采用的原型技术', bgUrl: playgroundCover }
+  {
+    mainTitle: '"蔷薇" - The IP',
+    subTitle: '一如雨中蔷薇，在星光与水流之间，静静盛放。',
+    bgUrl: rosaCover,
+    routerName: 'rosa',
+    visible: false
+  },
+  {
+    mainTitle: '改创计划 S13: 破晓',
+    subTitle: '"咫尺侵晨，所谓破晓，终将自由。"',
+    bgUrl: dawnbreakCover,
+    routerName: 'reform-create',
+    visible: false
+  },
+  { mainTitle: '与我联系', subTitle: '你的意见，我听得见', bgUrl: contactCover, routerName: 'contact', visible: false },
+  {
+    mainTitle: '试验场',
+    subTitle: '探索网站背后所采用的原型技术',
+    bgUrl: playgroundCover,
+    routerName: 'try-elanchor2',
+    visible: true
+  }
 ])

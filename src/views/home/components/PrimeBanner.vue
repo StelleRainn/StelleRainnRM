@@ -21,7 +21,7 @@ const onVisiting = () => {
     <!-- 背景层：视频背景 -->
     <div class="background-layer">
       <video autoplay loop muted preload="auto" playsinline @loadeddata="handleVideoLoad" class="background-video">
-        <source src="@/assets/videos/ChasingRain-Compressed.mp4" type="video/mp4" />
+        <source src="@/assets/videos/ChasingRain-released.mp4" type="video/mp4" />
         <!-- 视频加载失败时的后备背景 -->
         <div class="video-fallback"></div>
       </video>

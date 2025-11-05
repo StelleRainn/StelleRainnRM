@@ -144,7 +144,7 @@ onUnmounted(() => {
           class="background-video"
           playbackRate="1"
         >
-          <source src="@/assets/videos/collections.mp4" type="video/mp4" />
+          <source src="@/assets/videos/Dreamer-released.mp4" type="video/mp4" />
         </video>
         <!-- 视频加载失败时的后备背景 -->
         <div class="video-fallback">视频加载中</div>

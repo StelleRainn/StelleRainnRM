@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { ElLoading } from 'element-plus'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -70,6 +71,19 @@ const router = createRouter({
       component: () => import('@/views/notification/notification.vue')
     }
   ]
+})
+
+let loadingInstance = null
+
+router.beforeEach((to, from, next) => {
+  loadingInstance = ElLoading.service({ fullscreen: true })
+  next()
+})
+
+router.afterEach(() => {
+  if (loadingInstance) {
+    loadingInstance.close()
+  }
 })
 
 export default router

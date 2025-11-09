@@ -314,23 +314,12 @@ onUnmounted(() => {
         margin-bottom: 6rem;
 
         .genesis-paragraph {
-          font-size: 1.3rem;
-          line-height: 2.4;
+          font-size: 1.1rem;
+          line-height: 2;
           letter-spacing: 0.1rem;
           margin-bottom: 3rem;
           color: rgba(255, 255, 255, 0.9);
-          text-align: justify;
-          text-indent: 2em;
-
-          &:nth-child(3) {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.3rem;
-            text-indent: 0;
-            margin: 4rem 0;
-            color: rgba(255, 255, 255, 1);
-          }
+          text-align: center;
         }
       }
 
@@ -360,17 +349,17 @@ onUnmounted(() => {
         margin-top: 6rem;
 
         .closing-text {
-          font-size: 1.4rem;
-          line-height: 2.2;
-          letter-spacing: 0.15rem;
+          font-size: 1.2rem;
+          line-height: 2;
+          letter-spacing: 0.1rem;
           color: rgba(255, 255, 255, 0.9);
-          max-width: 800px;
+          max-width: 900px;
           margin: 0 auto;
           padding: 3rem;
           border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: 20px;
           background: rgba(255, 255, 255, 0.02);
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(5px);
         }
       }
     }
@@ -457,9 +446,8 @@ onUnmounted(() => {
         }
 
         .chapter-subtitle {
-          font-size: 1rem;
+          font-size: 0.8rem;
           font-weight: 300;
-          letter-spacing: 0.2rem;
           color: rgba(255, 255, 255, 0.7);
           margin-bottom: 2rem;
         }
@@ -487,6 +475,9 @@ onUnmounted(() => {
         &.chapter-5 {
           animation: floating 1.9s ease-in-out 1.2s infinite alternate;
         }
+        &.chapter-6 {
+          animation: floating 2s ease-in-out 0.6s infinite alternate;
+        }
       }
     }
   }
@@ -503,7 +494,7 @@ onUnmounted(() => {
   padding: 8rem 0 10rem 0;
 
   .story-chapter {
-    max-width: 950px;
+    max-width: 1000px;
     margin: 400px auto;
     padding: 0 2rem;
 
@@ -539,12 +530,12 @@ onUnmounted(() => {
 
     .story-content {
       .story-paragraph {
-        font-size: 1.3rem;
-        line-height: 2.4;
+        font-size: 1.1rem;
+        line-height: 2;
         letter-spacing: 0.1rem;
         margin-bottom: 3rem;
         color: rgba(255, 255, 255, 0.9);
-        text-indent: 2em;
+        text-align: center;
       }
     }
   }

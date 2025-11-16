@@ -2,7 +2,9 @@
 
 <template>
   <GeneralHeader></GeneralHeader>
-  <RouterView></RouterView>
+  <keep-alive>
+    <RouterView></RouterView>
+  </keep-alive>
 </template>
 
 <style scoped lang="scss"></style>

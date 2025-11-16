@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dev_track/开发日志.md",
-                "mode": "source",
-                "source": false
+                "file": "dev_track/面试复习指南.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "开发日志"
+              "title": "面试复习指南"
             }
           }
         ]
@@ -143,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dev_track/开发日志.md",
+                "file": "dev_track/面试复习指南.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "开发日志 的大纲"
+              "title": "面试复习指南 的大纲"
             }
           }
         ],
@@ -172,6 +172,9 @@
   },
   "active": "60dd470db4dca6ca",
   "lastOpenFiles": [
+    "src/views/notFound/NotFound.vue",
+    "src/views/notFound",
+    "dev_track/开发日志.md",
     "src/components/GeneralIntroduction.vue",
     "src/components/GeneralGallery.vue",
     "src/views/projects/Bookshelf.vue",
@@ -186,13 +189,10 @@
     "src/views/projects/Xtx.vue",
     "src/views/projects/WeRace.vue",
     "src/views/projects/ShoppingMall.vue",
-    "src/views/projects/Bilibili.vue",
-    "src/views/projects/single/Bilibili.vue",
     "src/assets/images/xiaoju-1.jpeg",
     "src/assets/images/8CEACD2B-1FA4-49BB-9EB8-BCCCFE4A796D_1_105_c.jpeg",
     "src/assets/images/swagii-1.jpeg",
     "src/assets/images/324B3425-3506-4FD2-8814-597ED62FE0EA_1_105_c.jpeg",
-    "src/assets/images/forest-1.jpeg",
-    "dev_track/开发日志.md"
+    "src/assets/images/forest-1.jpeg"
   ]
 }

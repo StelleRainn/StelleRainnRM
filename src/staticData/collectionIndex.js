@@ -35,7 +35,7 @@ export const galleryListContents = ref([
     imgUrl: shoppingMallGalleryBg,
     name: '智慧商城',
     desc: '基于 SPA 设计，广泛实践 Vue 2 基础',
-    onlineUrl: 'https://stellerainn.github.io/shopping-mall-vue2-demo/'
+    onlineUrl: 'https://shoppingmall-seven.vercel.app/'
   },
   {
     id: 3,
